@@ -19,7 +19,7 @@ class AppDocument extends Document {
     return (
       <Html>
         <Head></Head>
-        <body className="bg-p_back">
+        <body className="bg-[#E7ECEF]">
           <Main />
           <NextScript />
         </body>
