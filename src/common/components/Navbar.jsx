@@ -15,7 +15,8 @@ const Navbar = () => {
         <div className="flex">
           <a href="#" class="flex items-center">
             <Image src={Logo} class="w-15 sm:h-9 lg:mr-2 " alt="Flowbite Logo" />
-            <h1 className="text-blue-800 font-bold text-xs md:text-xs lg:text-sm lg:mx-3 ">STUDENT ASSOCIATION OF <br />INFORMATION TECHNOLOGY </h1>
+            <h1 className="hidden md:block  text-blue-800 font-bold text-xs md:text-xs lg:text-sm lg:mx-3 ">STUDENT ASSOCIATION OF <br />INFORMATION TECHNOLOGY </h1>
+            <h1 className="block md:hidden text-blue-800 font-bold text-3xl ml-1 md:text-xs lg:text-sm lg:mx-3 ">SAIT </h1>
           </a>
           <div class="relative hidden md:block">
             <input
