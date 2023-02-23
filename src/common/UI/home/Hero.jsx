@@ -2,37 +2,34 @@ import React from "react";
 import Sait from "./Sait";
 import Image from "next/image";
 import SaitLogo from "../../../../public/logo masked.png";
+import Herol from "../../../../public/assets/images/heroleft.svg";
+import HeroMob from "../../../../public/assets/images/herolmob.svg"
 
 const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row w-screen h-screen relative overflow-x-hidden">
-        <Image className="absolute w-24 md:w-32 -right-12 lg:left-[43.5%] xl:left-[45.5%] top-[30%]" src={SaitLogo} alt="" />
-      <div className="  w-full md:w-1/2 flex md:justify-center md:items-center h-5/6 bg-[#0D2E8E]">
-        <div className="mb-10">
-          <Sait letter="S" full="TUDENT" />
-          <Sait letter="A" full="SSOCIATION OF" />
-          <Sait letter="I" full="NFORMATION" />
-          <Sait letter="T" full="ECHNOLOGY" />
-        </div>
+    <div className="flex flex-col md:flex-row w-screen relative overflow-x-hidden">
+      <div className="">
+          <Image className="hidden md:block w-full xl:w-[70rem] lg:w-[55rem] md:w-[40rem]" src={Herol} alt="" />
+          <Image className="block md:hidden w-full xl:w-[70rem] lg:w-[55rem] md:w-[40rem]" src={HeroMob} alt="" />
       </div>
-      <div className=" relative p-16 w-full text-xs md:text-[14px]  md:w-1/2 text-black md:flex flex-col md:justify-center md:items-center h-5/6">
-        <Image className="block md:hidden absolute w-24 md:w-32 -left-12 md:left-[45.5%] top-[40%] md:top-[30%]" src={SaitLogo} alt="" />
-        <p className="w-5/6 md:w-3/4">
+      <div className="relative xl:py-56 lg:py-20 md:py-4 pr-16 w-full text-[14px] md:text-xs lg:text-sm xl:text-[1rem] md:w-1/2 text-black md:flex flex-col  h-5/6">
+        <Image className="block md:hidden absolute w-32 -left-20 top-[30%] md:top-[30%]" src={SaitLogo} alt="" />
+        <p className="w-5/6 ml-16 lg:w-3/4 md:w-full leading-5 ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
           magni voluptatum in vel similique adipisci illum dicta sunt nisi
           consequatur perferendis dolor libero dignissimos magnam veritatis
           accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
           optio.
         </p>
-        <div className="w-5/6 md:w-3/4 mt-9 ml-10 md:ml-20">
-          <p className="">
+        <div className="w-5/6 md:w-full lg:w-3/4 ml-20 lg:ml-20 leading-5">
+          <p className="lg:my-9 md:my-5 my-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
             magni voluptatum in vel similique adipisci illum dicta sunt nisi
             consequatur perferendis dolor libero dignissimos magnam veritatis
             accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
             optio.
           </p>
-          <button className="px-9 mt-10 py-1.5 border-2 rounded-md border-blue-900 font-bold text-blue-900">
+          <button className="px-14 py-2 hover:bg-blue-900 hover:text-white duration-500 border-2 border-blue-900 font-bold text-blue-900">
             EXPLORE
           </button>
         </div>
