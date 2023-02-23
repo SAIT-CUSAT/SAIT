@@ -5,14 +5,14 @@ import SaitLogo from "../../../../public/logo masked.png";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row w-screen h-screen relative overflow-x-hidden">
+    <div className="flex flex-col md:flex-row w-screen h-screen relative overflow-x-hidden ">
         <Image className="absolute w-24 md:w-32 -right-12 lg:left-[43.5%] xl:left-[45.5%] top-[30%]" src={SaitLogo} alt="" />
-      <div className="  w-full md:w-1/2 flex md:justify-center md:items-center h-5/6 bg-[#0D2E8E]">
-        <div className="mb-10">
-          <Sait letter="S" full="TUDENT" />
-          <Sait letter="A" full="SSOCIATION OF" />
-          <Sait letter="I" full="NFORMATION" />
-          <Sait letter="T" full="ECHNOLOGY" />
+      <div className="  w-full md:w-1/2 flex md:justify-center md:items-center h-5/6 bg-[#0D2E8E] skew-x-17">
+        <div className="h-1/2">
+          <Sait full="STUDENT" />
+          <Sait full="ASSOCIATION OF" />
+          <Sait full="INFORMATION" />
+          <Sait full="TECHNOLOGY" />
         </div>
       </div>
       <div className=" relative p-16 w-full text-xs md:text-[14px]  md:w-1/2 text-black md:flex flex-col md:justify-center md:items-center h-5/6">

@@ -20,6 +20,9 @@ module.exports = {
         'p_bggrey': '#525252',
         
       },
+      skew: {
+        '17': '17deg',
+      }
     },
     screens: {
       'sm': '640px',
@@ -39,4 +42,5 @@ module.exports = {
     }
   },
   plugins: [],
+  
 };
