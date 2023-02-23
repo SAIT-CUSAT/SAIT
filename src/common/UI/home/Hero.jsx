@@ -2,7 +2,7 @@ import React from "react";
 import Sait from "./Sait";
 import Image from "next/image";
 import SaitLogo from "../../../../public/logo masked.png";
-import Herol from "../../../../public/assets/images/heroleft.svg";
+import Herol from "../../../../public/assets/images/saithero.png";
 import HeroMob from "../../../../public/assets/images/herolmob.svg"
 
 const Hero = () => {
