@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="flex flex-col md:flex-row w-screen relative overflow-x-hidden">
       <div className="">
-          <Image className="hidden md:block w-full xl:w-[70rem] lg:w-[55rem] md:w-[40rem]" src={Herol} alt="" />
+          <Image className="hidden md:block w-full xl:w-[55rem] lg:w-[55rem] md:w-[40rem]" src={Herol} alt="" />
           <Image className="block md:hidden w-full xl:w-[70rem] lg:w-[55rem] md:w-[40rem]" src={HeroMob} alt="" />
       </div>
       <div className="relative xl:py-56 lg:py-20 md:py-4 pr-16 w-full text-[14px] md:text-xs lg:text-sm xl:text-[1rem] md:w-1/2 text-black md:flex flex-col  h-5/6">
