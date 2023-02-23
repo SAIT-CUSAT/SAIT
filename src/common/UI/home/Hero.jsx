@@ -13,7 +13,7 @@ const Hero = () => {
           <Image className="block md:hidden w-full xl:w-[70rem] lg:w-[55rem] md:w-[40rem]" src={HeroMob} alt="" />
       </div>
       <div className="relative xl:py-56 lg:py-20 md:py-4 pr-16 w-full text-[14px] md:text-xs lg:text-sm xl:text-[1rem] md:w-1/2 text-black md:flex flex-col  h-5/6">
-        <Image className="block md:hidden absolute w-32 -left-20 top-[30%] md:top-[30%]" src={SaitLogo} alt="" />
+        <Image className="block md:hidden absolute w-32 -left-[4.3rem] top-[30%] md:top-[30%]" src={SaitLogo} alt="" />
         <p className="w-5/6 ml-16 lg:w-3/4 md:w-full leading-5 ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
           magni voluptatum in vel similique adipisci illum dicta sunt nisi
