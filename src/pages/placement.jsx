@@ -118,10 +118,15 @@ const PlacementPage = () => {
                 </div>
 
             </div>
+
+            <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-10 p-8">
+                {companies.map((company) => (
+                    <div className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
+
             <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
                 {companies.map((company) => (
                     <div key={companies.id} className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
-                        <div className="flex flex-wrap justify-between ">
+          <div className="flex flex-wrap justify-between ">
                             <div>
                                 <Image
                                     src={company.logo}
@@ -149,6 +154,13 @@ const PlacementPage = () => {
 
 
             </div>
+
+            <div className="bg-[url('/images/bg-image.jpg')]md:bg-cover md:bg-center h-screen md:h-80 py-10 md:py-24 px-5 md:px-10 text-white flex flex-col justify-center items-center">
+                <h1 className="text-4xl font-bold mb-4 text-center md:text-left md:mb-8">Welcome to my website</h1>
+                <button className="bg-white text-gray-800 font-bold py-2 px-4 rounded-full mt-4 md:mt-8 transition duration-300 ease-in-out hover:bg-gray-800 hover:text-white">
+                    Explore
+                </button>
+
             <div className="bg-bg-image md:bg-cover md:bg-center h-screen grayscale hover:grayscale-0 py-10 md:py-24 px-5 md:px-10 text-white flex flex-col justify-center items-center">
                 <button className="px-9 mt-10 mb-14 py-1.5 border-2 rounded-md border-stone-200 font-bold text-stone-200">
                     EXPLORE
@@ -159,6 +171,7 @@ const PlacementPage = () => {
 
                 </div>
                 
+
             </div>
 
             <Footer />
