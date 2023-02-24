@@ -10,9 +10,11 @@ const Navbar = () => {
 
   return (
 
+
     <nav class="bg-transparent z-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
 
     <nav class="bg-stone-200 border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
+
 
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <div className="flex">
@@ -212,8 +214,10 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
     </nav>
     </nav>
+
 
   );
 };
