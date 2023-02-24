@@ -9,6 +9,9 @@ module.exports = {
       dropShadow: {
         '3xl': '0px 0px 20px  rgba(255,255,255,0.1)',
       },
+      backgroundImage: {
+        'bg-image': "url('/bg-image.png')",
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
