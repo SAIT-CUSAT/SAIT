@@ -120,7 +120,7 @@ const PlacementPage = () => {
             </div>
             <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
                 {companies.map((company) => (
-                    <div className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
+                    <div key={companies.id} className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
                         <div className="flex flex-wrap justify-between ">
                             <div>
                                 <Image
