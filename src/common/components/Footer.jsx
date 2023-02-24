@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import logo from '../../../public/logo white.png';
 
 const Footer = () => {
   return (
@@ -21,10 +22,10 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col mx-14 items-center mb-4 md:mb-0">
-          <img
-            src="/logo white.png"
+          <Image
+            src={logo}
             alt="Logo"
-            className="h-10 mr-2"
+            className="h-14 w-14 mr-2"
   
           />
           <span className="text-white tracking-[.8em] font-bold text-xl">SAIT</span>
@@ -32,15 +33,15 @@ const Footer = () => {
 
         <div className="flex justify-between mx-14 mb-4 md:mb-0">
           <Link href="/about" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">more link</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3 cursor-pointer">more link</p>
           </Link>
 
           <Link href="/contact" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 1</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3 cursor-pointer">link 1</p>
           </Link>
 
           <Link href="/contact" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 2</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3 cursor-pointer">link 2</p>
           </Link>
         </div>
       </div>
