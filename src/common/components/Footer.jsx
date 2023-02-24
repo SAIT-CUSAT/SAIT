@@ -9,15 +9,15 @@ const Footer = () => {
         <div className="flex justify-between text-white-900 mx-14 mb-4 md:mb-0">
 
           <Link href="/about" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">More Link</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3">More Link</p>
           </Link>
 
           <Link href="/contact" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 1</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 1</p>
           </Link>
 
           <Link href="/contact" legacyBehavior>
-            <a className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 2</a>
+            <p className="text-slate-200 font-sanf capitalize hover:text-white mx-3">link 2</p>
           </Link>
         </div>
 
