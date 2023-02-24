@@ -4,72 +4,94 @@ import Hero from '../common/UI/home/Hero';
 import Logo from "../../public/companes.png";
 import Image from 'next/image';
 import CompLogo1 from '../../public/company_logo/cognizant.png'
+import Footer from '../common/components/Footer';
 
 
-const events = [
+const companies = [
     {
         id: 1,
-        title: 'Job Fair 2023',
-        date: 'May 12, 2023',
-        description: 'Meet and network with top employers from various industries',
+        name: "Cognizant Technology solution",
+        dept: "information technology",
+        logo: '/company_logo/cognizant.png',
+        jobs: 784,
+
     },
     {
         id: 2,
-        title: 'Resume Workshop',
-        date: 'June 23, 2023',
-        description: 'Learn how to craft a compelling resume and cover letter',
+        name: "accenture",
+        dept: "information technology",
+        logo: '/company_logo/accenter.png',
+        jobs: 254,
+
     },
     {
         id: 3,
-        title: 'Mock Interviews',
-        date: 'July 28, 2023',
-        description: 'Practice your interview skills with experienced professionals',
+        name: "concentrix",
+        dept: "information technology",
+        logo: '/company_logo/concentric.png',
+        jobs: 124,
+
     },
+    {
+        id: 4,
+        name: "Tata consultancy services (TCS)",
+        dept: "information technology",
+        logo: '/company_logo/tcs.png',
+        jobs: 654,
+
+    },
+    {
+        id: 5,
+        name: "Wipro",
+        dept: "information technology",
+        logo: '/company_logo/wipro.png',
+        jobs: 95,
+
+    },
+    {
+        id: 6,
+        name: "Infoys",
+        dept: "information technology",
+        logo: '/company_logo/infocys.png',
+        jobs: 562,
+
+    },
+    {
+        id: 5,
+        name: "ibm",
+        dept: "information technology",
+        logo: '/company_logo/ibm.png',
+        jobs: 320,
+
+    },
+    {
+        id: 8,
+        name: "tech mahindra",
+        dept: "information technology",
+        logo: '/company_logo/mahindra.png',
+        jobs: 80,
+
+    },
+    {
+        id: 9,
+        name: "amacon.com",
+        dept: "Retail and wholesale",
+        logo: '/company_logo/amazon.png',
+        jobs: 61,
+
+    },
+    {
+        id: 10,
+        name: "Teleperformance",
+        dept: "Telecommunications",
+        logo: '/company_logo/telecom.png',
+        jobs: 154,
+
+    },
+
 ];
 
-const members = [
-    {
-        id: 1,
-        name: 'John Doe',
-        position: 'President',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-    {
-        id: 2,
-        name: 'Jane Smith',
-        position: 'Vice President',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-    {
-        id: 3,
-        name: 'Bob Johnson',
-        position: 'Treasurer',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-];
-
-export default function PlacementPage() {
-    const [selectedTab, setSelectedTab] = useState('events');
-
-    const renderEvents = () => {
-        return events.map((event) => (
-            <div key={event.id} className="my-6">
-                <h3 className="text-lg font-semibold">{event.title}</h3>
-                <p className="text-gray-500">{event.date}</p>
-                <p className="mt-2">{event.description}</p>
-            </div>
-        ));
-    };
-
-    const renderMembers = () => {
-        return members.map((member) => (
-            <div key={member.id} className="my-6">
-                <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="text-gray-500">{member.position}</p>
-                <p className="mt-2">{member.bio}</p>
-            </div>
-        ));
-    };
+const PlacementPage = () => {
 
     return (
         <div className="container mx-auto flex-col justify-between ">
@@ -97,38 +119,48 @@ export default function PlacementPage() {
 
             </div>
             <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-10 p-8">
-                <div className='flex  justify-between items-center p-10 bg-blue-900' >
-                    <div className="flex flex-wrap justify-between ">
-                        <div >
-                            <Image
-                                src={CompLogo1}
-                                alt="Picture of the author"
-                                width={66}
-                                height={66}
-                            />
+                {companies.map((company) => (
+                    <div className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
+                        <div className="flex flex-wrap justify-between ">
+                            <div>
+                                <Image
+                                    src={company.logo}
+                                    alt="Picture of the author"
+                                    width={66}
+                                    height={66}
+                                />
+                            </div>
+                            <div className="flex flex-wrap flex-col justify-between ml-5 text-stone-200 capitalize">
+                                <h1 className='text-3xl font-semibold '>{company.name}</h1>
+                                <p className='text-base'>{company.dept}</p>
+                            </div>
                         </div>
-                        <div className="flex flex-wrap flex-col justify-between ml-5 text-stone-200 capitalize">
-                            <h1 className='text-3xl font-semibold '>Cognizant Technology solution</h1>
-                            <p className='text-base'>information Technology</p>
+                        <div className="">
+                            <button class="bg-transparent text-stone-200 font-bold font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
+                                {company.jobs}+ Jobs
+                            </button>
+                            <button class="bg-transparent  text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
+                                know more
+                            </button>
                         </div>
                     </div>
-                    <div className="">
-                        <button class="bg-transparent hover:bg-blue-500 text-stone-200 font-bold font-semibold hover:text-white py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
-                            784 Jobs
-                        </button>
-                        <button class="bg-transparent hover:bg-blue-500 text-stone-200 font-semibold hover:text-white py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
-                            know more
-                        </button>
-                    </div>
-                </div>
-                <div className='p-10 bg-blue-900' >1</div>
-                <div className='p-10 bg-blue-900' >1</div>
-                <div className='p-10 bg-blue-900' >1</div>
-                <div className='p-10 bg-blue-900' >1</div>
+                ))}
+
+
 
             </div>
+            <div className="bg-[url('/images/bg-image.jpg')]md:bg-cover md:bg-center h-screen md:h-80 py-10 md:py-24 px-5 md:px-10 text-white flex flex-col justify-center items-center">
+                <h1 className="text-4xl font-bold mb-4 text-center md:text-left md:mb-8">Welcome to my website</h1>
+                <button className="bg-white text-gray-800 font-bold py-2 px-4 rounded-full mt-4 md:mt-8 transition duration-300 ease-in-out hover:bg-gray-800 hover:text-white">
+                    Explore
+                </button>
+            </div>
+
+            <Footer />
         </div>
 
 
     );
 }
+
+export default PlacementPage
