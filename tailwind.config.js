@@ -23,8 +23,15 @@ module.exports = {
         'p_bggrey': '#525252',
         
       },
+      skew: {
+        '17': '17deg',
+      }
     },
     screens: {
+
+      'xs': '320px',
+      // => @media (min-width: 320px) { ... }
+
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
@@ -42,4 +49,5 @@ module.exports = {
     }
   },
   plugins: [],
+  
 };
