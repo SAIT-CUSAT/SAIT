@@ -18,7 +18,7 @@ const Navbar = () => {
 
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <div className="flex">
-          <a href="#" class="flex items-center">
+          <a href="/" class="flex items-center">
             <Image
               src={Logo}
               class="w-15 sm:h-9 lg:mr-2 "
