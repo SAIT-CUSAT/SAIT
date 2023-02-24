@@ -9,7 +9,6 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="bg-transparent z-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <div className="flex">
           <a href="#" class="flex items-center">
@@ -158,7 +157,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 class="block py-2  rounded hover:underline md:bg-transparent md:p-0"
                 aria-current="page"
               >
@@ -167,7 +166,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="placement/"
                 class="block py-2   rounded hover:underline md:hover:bg-transparent "
               >
                 Placements
