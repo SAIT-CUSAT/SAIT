@@ -5,6 +5,8 @@ import Logo from "../../public/companes.png";
 import Image from 'next/image';
 import CompLogo1 from '../../public/company_logo/cognizant.png'
 import Footer from '../common/components/Footer';
+import Carosel from '../common/components/curosel';
+import Carousel from '../common/components/curosel';
 
 
 const companies = [
@@ -97,7 +99,7 @@ const PlacementPage = () => {
         <div className="container mx-auto flex-col justify-between ">
             <Hero />
 
-            <div className='container'>
+            <div className='container sm:flex-col'>
                 <div className=' mx-auto text-center my-14'>
                     <h1
                         className='text-3xl font-bold text-blue-900 tracking-[.8em] font-serif uppercase'
@@ -105,13 +107,14 @@ const PlacementPage = () => {
                         Our Top Recruiters
                     </h1>
                 </div>
-                <div className="flex my-10 flex-wrap justify-center items-center">
-                    <Image
+                <div className="flex my-10 mx-10 flex-wrap justify-center items-center">
+                    {/* <Image
                         src={Logo}
                         alt="Picture of the author"
                         width={853}
                         height={500}
-                    />
+                    /> */}
+                    <Carousel/>
                 </div>
                 <div className='mx-10 text-center my-14 text-blue-500'>
                     <p>Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus</p>
@@ -120,8 +123,8 @@ const PlacementPage = () => {
             </div>
             <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
                 {companies.map((company) => (
-                    <div key={companies.id} className='flex  justify-between items-center rounded-md p-10 bg-blue-900' >
-                        <div className="flex flex-wrap justify-between ">
+                    <div key={companies.id} className='flex justify-between items-center  rounded-md p-10 bg-blue-900' >
+                        <div className="flex flex-wrap gap-3 justify-between max-[677px]:flex-col ">
                             <div>
                                 <Image
                                     src={company.logo}
@@ -130,12 +133,12 @@ const PlacementPage = () => {
                                     height={66}
                                 />
                             </div>
-                            <div className="flex flex-wrap flex-col justify-between ml-5 text-stone-200 capitalize">
-                                <h1 className='text-3xl font-semibold '>{company.name}</h1>
+                            <div className="flex flex-wrap flex-col justify-between  text-stone-200 capitalize">
+                                <h1 className='text-3xl max-[769px]:text-xl font-semibold '>{company.name}</h1>
                                 <p className='text-base'>{company.dept}</p>
                             </div>
                         </div>
-                        <div className="">
+                        <div className="flex max-[677px]:flex-col">
                             <button class="bg-transparent text-stone-200 font-bold font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
                                 {company.jobs}+ Jobs
                             </button>
@@ -149,7 +152,7 @@ const PlacementPage = () => {
 
 
             </div>
-            <div className="bg-bg-image md:bg-cover md:bg-center h-screen grayscale hover:grayscale-0 py-10 md:py-24 px-5 md:px-10 text-white flex flex-col justify-center items-center">
+            <div className="bg-bg-image md:bg-cover md:bg-center py-10 md:py-24 mt-14 mx-auto h-screen px-5 md:px-10 text-white flex flex-col justify-center items-center">
                 <button className="px-9 mt-10 mb-14 py-1.5 border-2 rounded-md border-stone-200 font-bold text-stone-200">
                     EXPLORE
                 </button>
