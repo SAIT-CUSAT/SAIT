@@ -7,14 +7,14 @@ const Landing = () => {
   return (
     <div className="flex flex-col">
       <div className="flex">
-        <div className="w-1/2  relative">
+        <div className="w-1/2 h-max  relative">
           <Image
             className="hidden md:block w-full h-11/12 xl:w-[48rem] lg:w-[55rem] md:w-[40rem]"
             src={Event}
             alt=""
           />
           <Image
-            className="absolute bottom-5 right-10 hidden md:block w-full xl:w-[48rem] lg:w-[20rem] md:w-[40rem]"
+            className="absolute bottom-5 right-10 hidden md:block w-full xl:w-[30rem] lg:w-[20rem] md:w-[40rem]"
             src={Text}
             alt=""
           />
