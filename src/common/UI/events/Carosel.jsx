@@ -51,8 +51,8 @@ export default function Carousel() {
   }, [currentIndex]);
 
   return (
-    <div className="w-100 h-[500px] py-4 relative">
-      <div className="flex">
+    <div className="w-100 h-[500px] p-4 relative ">
+      <div className="flex hidden lg:flex">
       <Image
         src={images[currentIndex].src}
         alt="Current image"
@@ -72,18 +72,25 @@ export default function Carousel() {
       />
       )}
       </div>
-      <button
+      <div className="flex lg:hidden w-100">
+      <Image
+        src={images[currentIndex].src}
+        alt="Current image"
+        className=" h-[500px] px-3"
+      />
+      </div>
+      {/* <button
         onClick={prevImage}
-        className="absolute left-0 bottom-10 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
+        className="absolute left-5 bottom-20 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
       >
         Pre
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-0 bottom-10 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
+        className="absolute right-5 bottom-20 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
       >
         Next
-      </button>
+      </button> */}
     </div>
   );
 }

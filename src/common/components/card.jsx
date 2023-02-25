@@ -1,13 +1,15 @@
-const Cards = () => {
+import React from 'react';
+import Image from 'next/image';
+const Cards = (props) => {
     return (
         <div class="rounded border-2 overflow-hidden shadow-lg border-blue-900">
-            <img class="w-full" src="/bg-image.png" alt="Mountain" />
+            <Image class="w-full" src={props.img} alt="Mountain" />
             <div class="px-6 py-4">
-                <div class="font-semibold text-center text-blue-900 text-3xl mb-14">
-                    Two months Short term course in CAD & 3D Printing
+                <div class="font-semibold text-center text-blue-900 text-xl lg:text-3xl lg:mb-14 pb-7 lg:pb-0">
+                    {props.text}
                 </div>
                 <p class="text-gray-700 text-base text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    {props.para}
                 </p>
             </div>
             {/* <div class="px-6 pt-4 pb-2">
