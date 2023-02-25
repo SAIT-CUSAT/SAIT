@@ -160,8 +160,6 @@ const PlacementPage = () => {
                 </div>
                 
             </div>
-
-            <Footer />
         </div>
 
 

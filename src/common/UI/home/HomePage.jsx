@@ -11,7 +11,6 @@ const HomePage = () => {
       <Hero/>
       <UpcommingEvent/>
       <Learningclub/>
-      <Footer/>
     </div>
   )
 }
