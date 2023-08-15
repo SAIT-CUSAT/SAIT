@@ -2,8 +2,33 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import HomePage from '../common/UI/home/HomePage'
+import { useEffect,useState } from 'react'
+import { client } from '../../sanity/lib/client'; // Update the relative path accordingly
 
 export default function Home() {
+  const [post, setpost] = useState(null)
+  useEffect(() => {
+    const query = `*[_type == "post"]{
+      title,
+      slug,
+      mainImage {
+        asset -> {
+          url
+        }
+      }
+    }`;
+
+
+    client.fetch(query)
+      .then(data => {
+        console.log("Fetched data:", data);
+        setpost(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +40,6 @@ export default function Home() {
       <main className="">
         <HomePage/>
       </main>
-
     </div>
   )
 }

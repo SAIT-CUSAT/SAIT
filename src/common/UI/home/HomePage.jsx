@@ -11,14 +11,14 @@ import Executives from './Executives'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='flex flex-col'>
       <Hero/>
       <UpcommingEvent/>
       <Activities/>
       <Placements/>
       <FeaturedAlumni/>
       <Executives/>
-      <Learningclub/>
+      {/* <Learningclub/> */}
     </div>
   )
 }
