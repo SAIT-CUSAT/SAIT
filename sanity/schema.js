@@ -1,8 +1,8 @@
 import blockContent from './schemas/blockContent'
 import category from './schemas/category'
-import post from './schemas/post'
+import event from './schemas/event'
 import author from './schemas/author'
 
 export const schema = {
-  types: [post, author, category, blockContent],
+  types: [event, author, category, blockContent],
 }

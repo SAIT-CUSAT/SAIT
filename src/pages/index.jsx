@@ -8,7 +8,7 @@ import { client } from '../../sanity/lib/client'; // Update the relative path ac
 export default function Home() {
   const [post, setpost] = useState(null)
   useEffect(() => {
-    const query = `*[_type == "post"]{
+    const query = `*[_type == "event"]{
       title,
       slug,
       mainImage {

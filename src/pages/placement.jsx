@@ -97,7 +97,7 @@ const PlacementPage = () => {
 
     return (
         <div className="container mx-auto flex-col justify-between ">
-            <Hero />
+            {/* <Hero /> */}
 
             <div className='container sm:flex-col'>
                 <div className=' mx-auto text-center my-14'>
