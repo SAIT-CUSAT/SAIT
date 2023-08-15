@@ -81,10 +81,31 @@ const event = {
       ],
     },
     {
-      name: 'date',
-      title: 'Event Date',
+      name: 'venue',
+      title: 'Venue',
+      type: 'string',
+    },
+    {
+      name: 'startDate',
+      title: 'Event Start Date',
       type: 'datetime',
     },
+    {
+      name: 'endDate',
+      title: 'Event End Date',
+      type: 'datetime',
+    },
+    {
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Upcoming', value: 'upcoming', default:'upcoming' },
+          { title: 'Activity', value: 'activity' },
+        ],
+      },
+    }
     // ... other fields
   ],
   preview: {
