@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ["www.droptica.com"],
+    domains: ["www.droptica.com","tailwindui.com","cdn.sanity.io"],
   },
 
   sassOptions: {

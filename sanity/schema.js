@@ -4,7 +4,9 @@ import event from './schemas/event'
 import author from './schemas/author'
 import executive from './schemas/executive'
 import alumni from './schemas/alumni'
+import hostel from './schemas/hostel'
+import note from './schemas/note'
 
 export const schema = {
-  types: [event, author, category, blockContent,executive,alumni],
+  types: [event, author, category, blockContent,executive,alumni,hostel,note],
 }

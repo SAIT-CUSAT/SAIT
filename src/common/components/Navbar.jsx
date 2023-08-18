@@ -185,18 +185,18 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/hostels"
                   class="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
-                  Learning Club
+                  Hostels
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/notes"
                   class="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
-                  Portal
+                  Notes
                 </Link>
               </li>
               <li>
