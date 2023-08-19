@@ -53,7 +53,7 @@ function HostelList() {
                 <div>
                   <Link
                     href={hostel.location}
-                    class="text-lg  text-blue-900 hover:bg-gray-300  px-3 font-bold sm:border-b-2 sm:pl-3 sm:border-gray-300 py-2 h-max  dark:text-neutral-200 flex gap-x-2"
+                    class="text-lg  text-blue-900 hover:bg-gray-300  px-3 font-bold sm:border-b-2 sm:pl-3 sm:border-gray-300 py-2 h-max  flex gap-x-2"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ function HostelList() {
                     className="rounded-md w-max"
                     passHref
                   >
-                    <p className="flex w-full hover:bg-gray-300 items-center text-lg px-4 py-3 text-blue-900 font-bold border-gray-300 h-max dark:text-neutral-200 gap-x-2">
+                    <p className="flex w-full hover:bg-gray-300 items-center text-lg px-4 py-3 text-blue-900 font-bold border-gray-300 h-max gap-x-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

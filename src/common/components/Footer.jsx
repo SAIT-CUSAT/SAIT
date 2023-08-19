@@ -4,7 +4,7 @@ import logo from '../../../public/logo white.png';
 
 const Footer = () => {
   return (
-    <footer class="bg-blue-900 text-center text-stone-200 ">
+    <footer class="bg-blue-900 text-center text-stone-200">
       <div class=" pt-9">
         <div class="mb-9 flex justify-center">
           <a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200">
