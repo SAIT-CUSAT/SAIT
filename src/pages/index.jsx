@@ -6,28 +6,28 @@ import { useEffect,useState } from 'react'
 import { client } from '../../sanity/lib/client'; // Update the relative path accordingly
 
 export default function Home() {
-  const [post, setpost] = useState(null)
-  useEffect(() => {
-    const query = `*[_type == "event"]{
-      title,
-      slug,
-      mainImage {
-        asset -> {
-          url
-        }
-      }
-    }`;
+  // const [post, setpost] = useState(null)
+  // useEffect(() => {
+  //   const query = `*[_type == "event"]{
+  //     title,
+  //     slug,
+  //     mainImage {
+  //       asset -> {
+  //         url
+  //       }
+  //     }
+  //   }`;
 
 
-    client.fetch(query)
-      .then(data => {
-        console.log("Fetched data:", data);
-        setpost(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  //   client.fetch(query)
+  //     .then(data => {
+  //       console.log("Fetched data:", data);
+  //       setpost(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
   return (
     <div className={styles.container}>
