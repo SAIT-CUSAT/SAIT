@@ -4,11 +4,7 @@ import Link from "next/link";
 
 function NoteList() {
   const [notes, setNotes] = useState([]);
-//   const [filteredNotes, setFilteredNotes] = useState([]);
-//   const [selectedSemester, setSelectedSemester] = useState('');
-//   const [selectedSubject, setSelectedSubject] = useState('');
-//   const [selectedModule, setSelectedModule] = useState('');
-
+  const [search, setSearch] = useState('')
   useEffect(() => {
     const query = `*[_type == "note"]{
       topic,
@@ -23,40 +19,24 @@ function NoteList() {
       .then((data) => {
         console.log("Fetched data:", data);
         setNotes(data);
-        // setFilteredNotes(data); 
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, []);
 
-//   useEffect(() => {
-//     // Filter notes based on selected filters
-//     const filtered = notes.filter(note => (
-//       (!selectedSemester || note.semester === selectedSemester) &&
-//       (!selectedSubject || note.subject === selectedSubject) &&
-//       (!selectedModule || note.module === selectedModule)
-//     ));
-
-//     setFilteredNotes(filtered);
-//   }, [selectedSemester, selectedSubject, selectedModule, notes]);
-
   return (
     <div className="p-4">
-      <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
-        STUDY RESOURCES
-      </h1>
-      {/* Filter Controls */}
-      {/* <div>
-        <label>Semester:</label>
-        <input type="number" value={selectedSemester} onChange={e => setSelectedSemester(e.target.value)} />
-        <label>Subject:</label>
-        <input type="text" value={selectedSubject} onChange={e => setSelectedSubject(e.target.value)} />
-        <label>Module:</label>
-        <input type="number" value={selectedModule} onChange={e => setSelectedModule(e.target.value)} />
-      </div> */}
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
+          STUDY RESOURCES
+        </h1>
+        <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder="Search notes" className="p-3 w-1/4 h-8 rounded-xl mb-6"/>
+      </div>
       <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-        {notes.map((note) => (
+        {notes.filter((note)=>{
+          return search.toLowerCase() === ''? note:note.topic.toLowerCase().includes(search.toLowerCase())
+        }).map((note) => (
           <li key={note.topic}>
             <Link href={note.link}>
               <div className="border-2 border-blue-900 rounded-xl h-full bg-gray-400 p-4 flex items-center gap-3">
