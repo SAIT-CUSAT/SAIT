@@ -1,9 +1,10 @@
 import React from "react";
 import ActivityCards from "./ActivityCards";
 
-function Activities() {
+function Activities({ ActivityPost }) {
+  console.log(ActivityPost);
   return (
-    <div className="md:h-[45rem]">
+    <div className="md:h-[45rem] my-7">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
           ACTIVITIES
@@ -16,10 +17,20 @@ function Activities() {
 
         {/* cards */}
         <div className="flex items-center md:flex-row flex-col md:absolute md:right-0 xl:-bottom-[13.9rem] lg:-bottom-[24rem] gap-y-3">
-          <p className="self-center mr-6 font-bold text-blue-900 lg:text-center ml-3">VIEW ALL ACTIVITIES -&gt;</p>
-          <ActivityCards />
-          <ActivityCards />
-          <ActivityCards />
+          <p className="self-center mr-6 font-bold text-blue-900 lg:text-center ml-3">
+            VIEW ALL ACTIVITIES -&gt;
+          </p>
+
+          {ActivityPost.map((activity) => (
+            <ActivityCards
+              title={activity.title}
+              description={activity.description}
+              img={activity.imageUrl1}
+            />
+          ))}
+
+          {/* <ActivityCards />
+          <ActivityCards /> */}
         </div>
       </div>
     </div>
