@@ -4,7 +4,6 @@ import Event from "../../../../public/assets/images/events/hayya2.jpg";
 import Img1 from "../../../../public/assets/images/events/hayya1.jpg";
 import Img2 from "../../../../public/assets/images/events/EVENT 1.png";
 
-
 export default function Carousel() {
   // Declare a state variable called "currentIndex" and set it to 0
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,11 +39,9 @@ export default function Carousel() {
   };
   useEffect(() => {
     setTimeout(() => {
-      if(currentIndex < images.length - 1) 
-      {
+      if (currentIndex < images.length - 1) {
         setCurrentIndex(currentIndex + 1);
-      }
-      else{
+      } else {
         setCurrentIndex(0);
       }
     }, 3000);
@@ -52,45 +49,33 @@ export default function Carousel() {
 
   return (
     <div className="w-100 h-[500px] p-4 relative ">
-      <div className="flex hidden lg:flex">
-      <Image
-        src={images[currentIndex].src}
-        alt="Current image"
-        className=" h-[500px] w-1/2 px-3"
-      />
-      {currentIndex < images.length - 1 ? (
-      <Image
-        src={images[currentIndex+ 1 ].src}
-        alt="Current image"
-        className=" h-[500px] w-1/2 px-3"
-      />
-      ) : (
+      <div className="flex">
         <Image
-        src={images[0].src}
-        alt="Current image"
-        className=" h-[500px] w-1/2 px-3"
-      />
-      )}
+          src={images[currentIndex].src}
+          alt="Current image"
+          className=" h-[500px] w-1/2 px-3"
+        />
+        {currentIndex < images.length - 1 ? (
+          <Image
+            src={images[currentIndex + 1].src}
+            alt="Current image"
+            className=" h-[500px] w-1/2 px-3"
+          />
+        ) : (
+          <Image
+            src={images[0].src}
+            alt="Current image"
+            className=" h-[500px] w-1/2 px-3"
+          />
+        )}
       </div>
       <div className="flex lg:hidden w-100">
-      <Image
-        src={images[currentIndex].src}
-        alt="Current image"
-        className=" h-[500px] px-3"
-      />
+        <Image
+          src={images[currentIndex].src}
+          alt="Current image"
+          className=" h-[500px] px-3"
+        />
       </div>
-      {/* <button
-        onClick={prevImage}
-        className="absolute left-5 bottom-20 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
-      >
-        Pre
-      </button>
-      <button
-        onClick={nextImage}
-        className="absolute right-5 bottom-20 m-4 p-4 rounded-full bg-white hover:bg-gray-200"
-      >
-        Next
-      </button> */}
     </div>
   );
 }

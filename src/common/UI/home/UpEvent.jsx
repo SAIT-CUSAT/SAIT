@@ -13,8 +13,9 @@ const UpcommingEvent = ({upCommingPost}) => {
       </div>
       <div className="pt-6 px-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {upCommingPost.length > 0 &&
-          upCommingPost?.map((post) => (
+          upCommingPost?.map((post,index) => (
             <Cards
+              key={index}
               img={post.imageUrl1}
               text={post.title}
               para={post.description}
