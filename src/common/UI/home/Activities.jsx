@@ -1,5 +1,5 @@
 import React from "react";
-import ActivityCards from "./ActivityCards";
+import ActivityCards from "./Card";
 
 function Activities({ ActivityPost }) {
   console.log(ActivityPost);
