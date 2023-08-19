@@ -11,7 +11,7 @@ const UpcommingEvent = ({upCommingPost}) => {
           Upcoming Events
         </h1>
       </div>
-      <div className="pt-6 px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <div className="pt-6 px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {upCommingPost.length > 0 &&
           upCommingPost?.map((post,index) => (
             <Cards
