@@ -21,8 +21,9 @@ function Activities({ ActivityPost }) {
             VIEW ALL ACTIVITIES -&gt;
           </p>
 
-          {ActivityPost.map((activity) => (
+          {ActivityPost.map((activity,index) => (
             <ActivityCards
+              key={index}
               title={activity.title}
               description={activity.description}
               img={activity.imageUrl1}
