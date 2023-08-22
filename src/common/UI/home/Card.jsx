@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Img1 from "../../../../public/assets/images/sampleimg.jpg";
 
 function Card({ title, description, img }) {
-  console.log("title", title, "description", description);
+  // console.log("title", title, "description", description);
   return (
     <div class="flex flex-col items-center min-w-[15rem] min-h-[15rem] bg-white border-2 border-blue-900 shadow dark:bg-gray-800 dark:border-gray-700 mr-4">
       <Link href="#">
