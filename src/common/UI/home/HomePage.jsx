@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Learningclub from "../../components/Learningclub";
-import Navbar from "../../components/Navbar";
 import Hero from "./Hero";
-import Footer from "../../components/Footer";
 import UpcommingEvent from "./UpEvent";
 import Activities from "./Activities";
 import Placements from "./Placements";

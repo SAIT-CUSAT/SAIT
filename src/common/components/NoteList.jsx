@@ -9,21 +9,20 @@ function NoteList() {
   const [searchButtonClicked, setSearchButtonClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit } = useForm();
+
   const handleFilterSubmit = (data) => {
+    console.log("Filter data:", data);  
     // Fetch data based on the selected semester and module
-    const query = `*[_type == "note" && semester == $semester && module == $module] {
+    const query = `*[_type == "note" && semester == ${data.semester} && module == ${data.module}] {
       topic,
       link,
       semester,
       subject,
       module
     }`;
-  
+
     client
-      .fetch(query, {
-        semester: data.semester,
-        module: data.module,
-      })
+      .fetch(query)
       .then((data) => {
         console.log("Filtered data:", data);
         setSearchResults(data);
@@ -35,7 +34,7 @@ function NoteList() {
         setIsLoading(false); // Set loading status back to false
       });
   };
-  
+
   const handleSearch = () => {
     setSearchButtonClicked(true);
     setIsLoading(true);
@@ -88,9 +87,13 @@ function NoteList() {
         >
           Search
         </button>
-        <form onSubmit={handleSubmit(handleFilterSubmit)} className="flex gap-3">
+        <form
+          onSubmit={handleSubmit(handleFilterSubmit)}
+          className="flex gap-3"
+        >
           <label className="p-1 font-semibold uppercase">Semester:</label>
           <select {...register("semester")} name="semester">
+            <option value="0">All</option>
             <option value="1">Semester 1</option>
             <option value="2">Semester 2</option>
             <option value="3">Semester 3</option>
@@ -107,7 +110,7 @@ function NoteList() {
             <option value="3">Module 3</option>
             <option value="4">Module 4</option>
           </select>
-          <button type="submit">Set Filter</button>
+          <button className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4" type="submit">Set Filter</button>
         </form>
       </div>
       {/* Display search results */}
