@@ -12,15 +12,26 @@ function NoteList() {
 
   const handleFilterSubmit = (data) => {
     console.log("Filter data:", data);  
-    // Fetch data based on the selected semester and module
-    const query = `*[_type == "note" && semester == ${data.semester} && module == ${data.module}] {
+  
+    // Construct the GROQ query based on selected values
+    let query = `*[_type == "note"`;
+  
+    if (data.semester !== "0") {
+      query += ` && semester == ${data.semester}`;
+    }
+  
+    if (data.module !== "0") {
+      query += ` && module == ${data.module}`;
+    }
+  
+    query += `] {
       topic,
       link,
       semester,
       subject,
       module
     }`;
-
+  
     client
       .fetch(query)
       .then((data) => {
@@ -65,6 +76,7 @@ function NoteList() {
       setSearchResults([]);
       setIsLoading(false); // Clear search results if search query is empty
     }
+    setSearchQuery("")
   };
   return (
     <div className="p-4">
@@ -93,7 +105,7 @@ function NoteList() {
         >
           <label className="p-1 font-semibold uppercase">Semester:</label>
           <select {...register("semester")} name="semester">
-            <option value="0">All</option>
+            <option value="0">Select Semester</option>
             <option value="1">Semester 1</option>
             <option value="2">Semester 2</option>
             <option value="3">Semester 3</option>
@@ -105,12 +117,13 @@ function NoteList() {
           </select>
           <label className="p-1 font-semibold uppercase">Module:</label>
           <select {...register("module")} name="module">
+            <option value="0">Select Module</option>
             <option value="1">Module 1</option>
             <option value="2">Module 2</option>
             <option value="3">Module 3</option>
             <option value="4">Module 4</option>
           </select>
-          <button className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4" type="submit">Set Filter</button>
+          <button className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4" type="submit">Get Results</button>
         </form>
       </div>
       {/* Display search results */}
