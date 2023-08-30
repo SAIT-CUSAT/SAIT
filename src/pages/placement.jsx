@@ -139,7 +139,7 @@ const PlacementPage = () => {
                             </div>
                         </div>
                         <div className="flex max-[677px]:flex-col">
-                            <button class="bg-transparent text-stone-200 font-bold font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
+                            <button class="bg-transparent text-stone-200 font-bold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
                                 {company.jobs}+ Jobs
                             </button>
                             <button class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
