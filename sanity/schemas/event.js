@@ -1,119 +1,51 @@
 const event = {
-  name: 'event',
-  title: 'Event',
-  type: 'document',
+  name: "event",
+  title: "Event",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'title',
-          maxLength: 96,
-        },
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{ type: 'image' }],
-      options: {
-        hotspot: true,
-      },
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [{ type: "image" }],
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "startDate",
+      title: "Start Date",
+      type: "datetime",
     },
     {
-      name: 'speakers',
-      title: 'Speakers',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              name: 'name',
-              title: 'Name',
-              type: 'string',
-            },
-            {
-              name: 'bio',
-              title: 'Bio',
-              type: 'text',
-            },
-            {
-              name: 'photo',
-              title: 'Photo',
-              type: 'image',
-            },
-            {
-              name: 'socialProfiles',
-              title: 'Social Profiles',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    {
-                      name: 'platform',
-                      title: 'Platform',
-                      type: 'string',
-                    },
-                    {
-                      name: 'url',
-                      title: 'URL',
-                      type: 'url',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      name: "endDate",
+      title: "End Date",
+      type: "datetime",
     },
     {
-      name: 'venue',
-      title: 'Venue',
-      type: 'string',
+      name: "venue",
+      title: "Venue",
+      type: "string",
     },
     {
-      name: 'startDate',
-      title: 'Event Start Date',
-      type: 'datetime',
+      name: "speakers",
+      title: "Speakers",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "speaker" }] }],
     },
     {
-      name: 'endDate',
-      title: 'Event End Date',
-      type: 'datetime',
+      name: "isCompleted",
+      title: "Is Completed",
+      type: "boolean",
     },
-    {
-      name: 'status',
-      title: 'Status',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Upcoming', value: 'upcoming', default:'upcoming' },
-          { title: 'Activity', value: 'activity' },
-        ],
-      },
-    }
-    // ... other fields
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'images.0',
-    },
-  },
 };
 
 export default event;
