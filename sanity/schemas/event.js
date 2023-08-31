@@ -9,9 +9,13 @@ const event = {
       type: "string",
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     },
     {
       name: "images",
@@ -25,9 +29,26 @@ const event = {
       type: "datetime",
     },
     {
-      name: "endDate",
-      title: "End Date",
-      type: "datetime",
+      name: 'speakers',
+      title: 'Speakers',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+            },
+            {
+              name: 'socialProfileUrl',
+              title: 'Social Profile URL',
+              type: 'url',
+            },
+          ],
+        },
+      ],
     },
     {
       name: "venue",
@@ -45,6 +66,17 @@ const event = {
       title: "Is Completed",
       type: "boolean",
     },
+    {
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Upcoming', value: 'upcoming', default: 'upcoming' },
+          { title: 'Activity', value: 'activity' },
+        ],
+      },
+    }
   ],
 };
 
