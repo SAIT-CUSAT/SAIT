@@ -8,5 +8,5 @@ import hostel from './schemas/hostel'
 import note from './schemas/note'
 
 export const schema = {
-  types: [event, author, category, speaker,executive,alumni,placement,hostel,note],
+  types: [event, category, speaker,executive,alumni,placement,hostel,note],
 }

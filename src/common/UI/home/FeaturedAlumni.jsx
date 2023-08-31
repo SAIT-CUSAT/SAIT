@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import saitimage from "../../../../public/logo white.png"
+import Link from "next/link";
 const alumnis = [
   {
     id:1,
@@ -41,6 +42,9 @@ function FeaturedAlumni() {
         </p>
         {/* cards */}
         <div className="flex items-center md:mt-16 md:flex-row flex-col flex-wrap md:absolute md:right-0 md:-bottom-[18rem] xl:-bottom-[6.4rem] gap-y-3">
+        <Link href="/alumni" className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] md:text-blue-900 lg:text-center lg:pr-3 xl:mt-32">
+            VIEW ALL
+          </Link>
           {alumnis.map((alumni)=>(
             <div key={alumni.id}>
               <Card title={alumni.name} description={alumni.company} img={alumni.img}></Card>
