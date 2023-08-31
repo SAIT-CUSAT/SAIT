@@ -1,12 +1,12 @@
 const event = {
-  name: 'event',
-  title: 'Event',
-  type: 'document',
+  name: "event",
+  title: "Event",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
       name: 'slug',
@@ -18,18 +18,15 @@ const event = {
       },
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{ type: 'image' }],
-      options: {
-        hotspot: true,
-      },
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [{ type: "image" }],
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "startDate",
+      title: "Start Date",
+      type: "datetime",
     },
     {
       name: 'speakers',
@@ -54,19 +51,20 @@ const event = {
       ],
     },
     {
-      name: 'venue',
-      title: 'Venue',
-      type: 'string',
+      name: "venue",
+      title: "Venue",
+      type: "string",
     },
     {
-      name: 'startDate',
-      title: 'Event Start Date',
-      type: 'datetime',
+      name: "speakers",
+      title: "Speakers",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "speaker" }] }],
     },
     {
-      name: 'endDate',
-      title: 'Event End Date',
-      type: 'datetime',
+      name: "isCompleted",
+      title: "Is Completed",
+      type: "boolean",
     },
     {
       name: 'status',
@@ -79,14 +77,7 @@ const event = {
         ],
       },
     }
-    // ... other fields
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'images.0',
-    },
-  },
 };
 
 export default event;

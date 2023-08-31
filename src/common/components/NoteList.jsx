@@ -12,15 +12,26 @@ function NoteList() {
 
   const handleFilterSubmit = (data) => {
     console.log("Filter data:", data);  
-    // Fetch data based on the selected semester and module
-    const query = `*[_type == "note" && semester == ${data.semester} && module == ${data.module}] {
+  
+    // Construct the GROQ query based on selected values
+    let query = `*[_type == "note"`;
+  
+    if (data.semester !== "0") {
+      query += ` && semester == ${data.semester}`;
+    }
+  
+    if (data.module !== "0") {
+      query += ` && module == ${data.module}`;
+    }
+  
+    query += `] {
       topic,
       link,
       semester,
       subject,
       module
     }`;
-
+  
     client
       .fetch(query)
       .then((data) => {
@@ -65,6 +76,7 @@ function NoteList() {
       setSearchResults([]);
       setIsLoading(false); // Clear search results if search query is empty
     }
+    setSearchQuery("")
   };
   return (
     <div className="p-4">
@@ -73,48 +85,51 @@ function NoteList() {
       </h1>
 
       {/* Search bar */}
-      <div className="flex justify-center gap-2 mb-4">
-        <input
-          type="text"
-          placeholder="Search by topic..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="border h-8 border-gray-300 px-2 py-1 rounded-md w-1/3"
-        />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4"
-        >
-          Search
-        </button>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-2 mb-4">
+        <div className="flex flex-row w-1/2 justify-center items-center gap-2">
+          <input
+            type="text"
+            placeholder="Search by topic..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="border h-8 border-gray-300 px-2 py-1 rounded-md min-w-[280px]a"
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4"
+          >
+            Search
+          </button>
+        </div>
         <form
           onSubmit={handleSubmit(handleFilterSubmit)}
-          className="flex gap-3"
+          className="flex flex-row gap-3 items-center justify-center"
         >
-          <label className="p-1 font-semibold uppercase">Semester:</label>
-          <select {...register("semester")} name="semester">
-            <option value="0">All</option>
-            <option value="1">Semester 1</option>
-            <option value="2">Semester 2</option>
-            <option value="3">Semester 3</option>
-            <option value="4">Semester 4</option>
-            <option value="5">Semester 5</option>
-            <option value="6">Semester 6</option>
-            <option value="7">Semester 7</option>
-            <option value="8">Semester 8</option>
-          </select>
-          <label className="p-1 font-semibold uppercase">Module:</label>
-          <select {...register("module")} name="module">
-            <option value="1">Module 1</option>
-            <option value="2">Module 2</option>
-            <option value="3">Module 3</option>
-            <option value="4">Module 4</option>
-          </select>
-          <button className="bg-blue-500 text-white px-4 py-1 rounded-md mr-4" type="submit">Set Filter</button>
+            {/* <label className="p-1 font-semibold uppercase">Semester:</label> */}
+            <select {...register("semester")} className="rounded-md p-1" name="semester">
+              <option value="0">Select Semester</option>
+              <option value="1">Semester 1</option>
+              <option value="2">Semester 2</option>
+              <option value="3">Semester 3</option>
+              <option value="4">Semester 4</option>
+              <option value="5">Semester 5</option>
+              <option value="6">Semester 6</option>
+              <option value="7">Semester 7</option>
+              <option value="8">Semester 8</option>
+            </select>
+            {/* <label className="p-1 font-semibold uppercase">Module:</label> */}
+            <select {...register("module")} className="rounded-md p-1" name="module">
+              <option value="0">Select Module</option>
+              <option value="1">Module 1</option>
+              <option value="2">Module 2</option>
+              <option value="3">Module 3</option>
+              <option value="4">Module 4</option>
+            </select>
+          <button className="bg-blue-500 text-center text-white px-4 py-1 w-[70px] rounded-md mr-4" type="submit">Filter</button>
         </form>
       </div>
       {/* Display search results */}
-      <ul className="w-full text-center grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+      <ul className="w-full text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {isLoading ? (
           <p className="text-center md:col-span-3 sm:col-span-2">Loading...</p>
         ) : searchButtonClicked &&
