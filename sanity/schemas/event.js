@@ -9,13 +9,13 @@ const event = {
       type: 'string',
     },
     {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'title',
-          maxLength: 96,
-        },
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     },
     {
       name: 'images',
@@ -45,36 +45,9 @@ const event = {
               type: 'string',
             },
             {
-              name: 'bio',
-              title: 'Bio',
-              type: 'text',
-            },
-            {
-              name: 'photo',
-              title: 'Photo',
-              type: 'image',
-            },
-            {
-              name: 'socialProfiles',
-              title: 'Social Profiles',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    {
-                      name: 'platform',
-                      title: 'Platform',
-                      type: 'string',
-                    },
-                    {
-                      name: 'url',
-                      title: 'URL',
-                      type: 'url',
-                    },
-                  ],
-                },
-              ],
+              name: 'socialProfileUrl',
+              title: 'Social Profile URL',
+              type: 'url',
             },
           ],
         },
@@ -101,7 +74,7 @@ const event = {
       type: 'string',
       options: {
         list: [
-          { title: 'Upcoming', value: 'upcoming', default:'upcoming' },
+          { title: 'Upcoming', value: 'upcoming', default: 'upcoming' },
           { title: 'Activity', value: 'activity' },
         ],
       },
