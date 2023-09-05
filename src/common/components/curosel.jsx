@@ -87,9 +87,11 @@ const Carousel = () => {
   return (
     <Swiper ref={swiperRef} slidesPerView={5} loop={true}>
       {companies.map((company) => (
-        <SwiperSlide>
-          <img src={company.logo} width={100} alt="Image 1" />
-        </SwiperSlide>
+        <div key={company.id}>
+            <SwiperSlide>
+                <img src={company.logo} width={100} alt="Image 1" />
+            </SwiperSlide>
+        </div>  
       ))}
     </Swiper>
   );
