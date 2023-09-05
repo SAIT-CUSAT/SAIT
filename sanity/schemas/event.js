@@ -56,8 +56,8 @@ const event = {
       type: "string",
     },
     {
-      name: "speakers",
-      title: "Speakers",
+      name: "speaker",
+      title: "Speaker",
       type: "array",
       of: [{ type: "reference", to: [{ type: "speaker" }] }],
     },

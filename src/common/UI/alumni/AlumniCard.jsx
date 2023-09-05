@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-const Card = ({title,description,img,speakers}) => {
+const AlumniCard = ({title,description,img,speakers}) => {
   const displayedText = description?.length > 50 ? `${description.slice(0, 70)}...` : description;
   return (
-    <div class="rounded w-64 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
+    <div class="rounded w-64 hover:w-72 duration-500      ease-in-out border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
       <div className="">
         <div class="overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
           <figure>
@@ -40,4 +40,4 @@ const Card = ({title,description,img,speakers}) => {
   );
 };
 
-export default Card;
+export default AlumniCard;

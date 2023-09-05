@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-const Cards = (props) => {
+const EventCard = (props) => {
   const displayedText =
     props.para.length > 50 ? `${props.para.slice(0, 70)}...` : props.para;
   return (
@@ -13,7 +13,7 @@ const Cards = (props) => {
               height={300}
               src={props.img}
               alt="card image"
-              class="aspect-[3/3] w-full"
+              class="aspect-[16/10] w-full"
             />
           </figure>
           <div class="p-6">
@@ -41,4 +41,4 @@ const Cards = (props) => {
   );
 };
 
-export default Cards;
+export default EventCard;

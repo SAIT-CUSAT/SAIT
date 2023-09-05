@@ -4,6 +4,7 @@ import Link from "next/link";
 import Bg from "../../../../public/bg-image.png";
 
 const UpcommingEvent = ({upCommingPost}) => {
+  console.log(upCommingPost)
   return (
     <div className="container flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-6">
@@ -11,7 +12,7 @@ const UpcommingEvent = ({upCommingPost}) => {
           Upcoming Events
         </h1>
       </div>
-      <div className="pt-6 px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="pt-6 px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
         {upCommingPost.length > 0 &&
           upCommingPost?.map((post,index) => (
             <Cards
@@ -19,6 +20,7 @@ const UpcommingEvent = ({upCommingPost}) => {
               img={post.imageUrl1}
               text={post.title}
               para={post.description}
+              speakers={post.speakers}
             />
           ))}
       </div>

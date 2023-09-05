@@ -22,7 +22,7 @@ function Executives() {
       });
   }, []);
   return (
-    <div className="md:my-0 my-5">
+    <div className="md:my-32 my-5">
       <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
         EXECUTIVE MEMBERS
       </h1>

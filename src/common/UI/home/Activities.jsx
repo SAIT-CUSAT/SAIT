@@ -16,7 +16,7 @@ function Activities({ ActivityPost }) {
         </p>
 
         {/* cards */}
-        <div className="flex items-center md:flex-row flex-col md:absolute md:right-0 xl:-bottom-[13.9rem] lg:-bottom-[24rem] gap-y-3">
+        <div className="flex items-center md:flex-row flex-col md:absolute md:right-4 xl:-bottom-[20rem] lg:-bottom-[24rem] gap-y-3">
           <p className="self-center mr-6 font-bold text-blue-900 lg:text-center ml-3">
             VIEW ALL ACTIVITIES -&gt;
           </p>
@@ -27,6 +27,7 @@ function Activities({ ActivityPost }) {
               title={activity.title}
               description={activity.description}
               img={activity.imageUrl1}
+              speakers={activity.speakers}
             />
           ))}
 

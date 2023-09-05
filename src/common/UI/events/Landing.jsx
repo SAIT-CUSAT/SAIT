@@ -6,7 +6,7 @@ import Text from "../../../../public/assets/images/events/Group 10.png";
 const Landing = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex md:flex-row flex-col">
+      <div className="flex items-center md:flex-row flex-col">
         <div className="w-1/2 h-max  relative">
           <Image
             className=" w-full h-full md:h-11/12 xl:w-[48rem] lg:w-[55rem] md:w-[40rem]"

@@ -4,7 +4,7 @@ import Event from "../../../../public/assets/images/events/hayya2.jpg";
 import Img1 from "../../../../public/assets/images/events/hayya1.jpg";
 import Img2 from "../../../../public/assets/images/events/EVENT 1.png";
 
-export default function Carousel() {
+export default function Carousel({data}) {
   // Declare a state variable called "currentIndex" and set it to 0
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -12,8 +12,8 @@ export default function Carousel() {
   const images = [
     { src: Event, alt: "Event" },
     { src: Img1, alt: "Event" },
-    { src: Img2, alt: "Event" },
-    { src: Img2, alt: "Event" },
+    { src: Img1, alt: "Event" },
+    { src: Img1, alt: "Event" },
   ];
 
   // Declare a function that will handle moving to the next image in the carousel
@@ -44,28 +44,28 @@ export default function Carousel() {
       } else {
         setCurrentIndex(0);
       }
-    }, 3000);
+    }, 2000);
   }, [currentIndex]);
 
   return (
-    <div className="w-100 h-[500px] p-4 relative ">
-      <div className="flex">
+    <div className="w-100 h-[20rem] p-4 relative ">
+      <div className="flex h-full">
         <Image
           src={images[currentIndex].src}
           alt="Current image"
-          className=" h-[500px] w-1/2 px-3"
+          className=" h-full w-1/2 px-3 object-contain" 
         />
         {currentIndex < images.length - 1 ? (
           <Image
             src={images[currentIndex + 1].src}
             alt="Current image"
-            className=" h-[500px] w-1/2 px-3"
+            className=" h-full w-1/2 px-3 object-contain"
           />
         ) : (
           <Image
             src={images[0].src}
             alt="Current image"
-            className=" h-[500px] w-1/2 px-3"
+            className=" h-full w-1/2 px-3 object-contain"
           />
         )}
       </div>

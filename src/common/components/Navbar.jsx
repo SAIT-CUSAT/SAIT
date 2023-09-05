@@ -209,7 +209,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/contact-us"
                   class="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Contact Us

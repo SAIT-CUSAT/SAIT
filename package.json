@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "@sanity/client": "^6.4.6",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.15.1",

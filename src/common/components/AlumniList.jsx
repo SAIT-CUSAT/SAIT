@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { client } from '../../../sanity/lib/client';
 import Card from '../UI/home/Card';
 import AlumniModal from './AlumniModal'; // Import your AlumniModal component
+import AlumniCard from '../UI/alumni/AlumniCard';
 
 const AlumniList = () => {
   const [alumniData, setAlumniData] = useState([]);
@@ -43,8 +44,8 @@ const AlumniList = () => {
         FEATURED ALUMNI
       </h1>
       {alumniData.map((alumni) => (
-        <div key={alumni.name} onClick={() => openModal(alumni)}>
-          <Card title={alumni.name} img={alumni.imageUrl}></Card>
+        <div className='w-max' key={alumni.name} onClick={() => openModal(alumni)}>
+          <AlumniCard title={alumni.name} img={alumni.imageUrl}></AlumniCard>
         </div>
       ))}
 

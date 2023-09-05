@@ -1,39 +1,33 @@
 import React from "react";
-import Card from "./Card";
-import saitimage from "../../../../public/logo white.png"
+import FeaturedAlumniCard from "./FeaturedAlumniCard";
+import saitimage from "../../../../public/logo white.png";
 import Link from "next/link";
 const alumnis = [
   {
-    id:1,
-    name:"rahul",
+    id: 1,
+    name: "rahul",
     company: "IBM",
-    img: saitimage
+    img: saitimage,
   },
   {
-    id:2,
-    name:"rahul",
+    id: 2,
+    name: "rahul",
     company: "IBM",
-    img: saitimage
+    img: saitimage,
   },
   {
-    id:3,
-    name:"rahul",
+    id: 3,
+    name: "rahul",
     company: "IBM",
-    img: saitimage
+    img: saitimage,
   },
-  {
-    id:4,
-    name:"rahul",
-    company: "IBM",
-    img: saitimage
-  },
-]
+];
 function FeaturedAlumni() {
   return (
     <div className="md:h-[45rem]">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
-        FEATURED ALUMNI
+          FEATURED ALUMNI
         </h1>
         <p className="xl:w-1/4 w-full mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
@@ -41,15 +35,23 @@ function FeaturedAlumni() {
           fringilla luctus, nunc nisl aliquam nisl, eu aliquam nunc nisl eu.
         </p>
         {/* cards */}
-        <div className="flex items-center md:mt-16 md:flex-row flex-col flex-wrap md:absolute md:right-0 md:-bottom-[18rem] xl:-bottom-[6.4rem] gap-y-3">
-        <Link href="/alumni" className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] md:text-blue-900 lg:text-center lg:pr-3 xl:mt-32">
-            VIEW ALL
-          </Link>
-          {alumnis.map((alumni)=>(
+        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[14rem] xl:-bottom-[9rem] gap-3">
+          
+          {alumnis.map((alumni) => (
             <div key={alumni.id}>
-              <Card title={alumni.name} description={alumni.company} img={alumni.img}></Card>
+              <FeaturedAlumniCard
+                title={alumni.name}
+                description={alumni.company}
+                img={alumni.img}
+              ></FeaturedAlumniCard>
             </div>
           ))}
+          <Link
+            href="/alumni"
+            className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-32 mt-12"
+          >
+            VIEW ALL
+          </Link>
         </div>
       </div>
     </div>
