@@ -184,12 +184,21 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/hostels"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                <button
+                  type="button"
+                  class="relative inline-flex items-center bg-blue-800 w-max px-2 h-max rounded-md text-sm font-bold text-center"
                 >
-                  Hostels
-                </Link>
+                  <span class="sr-only">Notifications</span>
+                  <div class="absolute inline-flex items-center justify-center border-2 border-white p-1 w-max h-max text-xs font-bold text-white bg-blue-400 rounded-full -top-5 -right-5">
+                    New
+                  </div>
+                  <Link
+                    href="/hostels"
+                    class="block py-2 rounded hover:underline md:hover:bg-transparent text-white"
+                  >
+                    Hostels
+                  </Link>
+                </button>
               </li>
               <li>
                 <Link
