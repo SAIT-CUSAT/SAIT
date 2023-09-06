@@ -22,7 +22,7 @@ const Cards = (props) => {
               <p class="text-sm text-slate-400">
                 {props.speakers?.length > 0 && "By"}   
                 {props.speakers?.map((speaker, index) => (
-                  <span className="">
+                  <span key={index} className="">
                     {" " + speaker.name}
                     {index === props.speakers.length - 1
                       ? "."

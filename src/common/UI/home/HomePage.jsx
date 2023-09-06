@@ -65,7 +65,9 @@ const HomePage = () => {
       {upCommingPost && upCommingPost.length > 0 && (
         <UpcommingEvent upCommingPost={upCommingPost} />
       )}
-      {ActivityPost && ActivityPost.length > 0 && <Activities ActivityPost={ActivityPost} />}
+      {ActivityPost && ActivityPost.length > 0 && (
+        <Activities ActivityPost={ActivityPost} />
+      )}
       <Placements />
       <FeaturedAlumni />
       <Executives />

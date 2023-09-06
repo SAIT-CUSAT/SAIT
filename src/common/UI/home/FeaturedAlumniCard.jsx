@@ -22,7 +22,7 @@ const FeaturedAlumniCard = ({ title, description, img, speakers,key }) => {
               <p class="text-sm text-slate-400">
                 By
                 {speakers?.map((speaker, index) => (
-                  <span className="">
+                  <span key={index} className="">
                     {" " + speaker.name}
                     {index === speakers.length - 1
                       ? "."

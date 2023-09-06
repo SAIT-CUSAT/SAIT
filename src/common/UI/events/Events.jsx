@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../../components/Navbar.jsx'
 import Landing from './Landing.jsx'
-import Carosel from './Carosel.jsx'
 import Upevent from './Upevent.jsx'
 import Allevent from './Allevent.jsx'
-import Slider from '../../components/slider.jsx'
 import { client } from '../../../../sanity/lib/client'
 
 const Events = () => {
@@ -43,8 +40,6 @@ const Events = () => {
   return (
     <div>
         <Landing />
-        {/* <Slider data ={EventsData} /> */}
-        {/* <Carosel data ={EventsData} /> */}
         <Upevent data={upcommingEvents} />
         <Allevent data={EventsData} />
     </div>
