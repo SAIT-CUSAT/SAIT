@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-const AlumniCard = ({title,img,company,designation}) => {
+const AlumniCard = ({title,img,company,designation,key}) => {
   return (
-    <div class="rounded w-64 hover:w-72 duration-500 ease-in-out border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
+    <div key={key} class="rounded w-64 hover:w-72 duration-500 ease-in-out border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
       <div className="">
         <div class="overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
           <figure>

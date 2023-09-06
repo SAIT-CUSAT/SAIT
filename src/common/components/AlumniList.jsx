@@ -42,9 +42,9 @@ const   AlumniList = () => {
       <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
         FEATURED ALUMNI
       </h1>
-      {alumniData.map((alumni) => (
-        <div className='w-max' key={alumni._id} onClick={() => openModal(alumni)}>
-          <AlumniCard title={alumni.name} img={alumni.imageUrl} company={alumni.company} designation={alumni.designation} />
+      {alumniData.map((alumni,index) => (
+        <div className='w-max' key={index} onClick={() => openModal(alumni)}>
+          <AlumniCard key={index} title={alumni.name} img={alumni.imageUrl} company={alumni.company} designation={alumni.designation} />
         </div>
       ))}
 

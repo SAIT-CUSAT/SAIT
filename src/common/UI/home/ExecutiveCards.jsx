@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image'
 
-function ExecutiveCards({name,position,image}) {
+function ExecutiveCards({name,position,image,key}) {
   return (
-    <div>
+    <div key={key}>
         {/* card with a image and name */}
         <div className="flex flex-col items-center">
             <div className="bg-white rounded-lg w-64 h-[17rem]">

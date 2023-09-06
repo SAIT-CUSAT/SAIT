@@ -27,9 +27,10 @@ function Executives() {
         EXECUTIVE MEMBERS
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-5">
-        {executives.map(executive => (
+        {executives.map((executive,index) => (
           <div key={executive.name}>
             <ExecutiveCards
+              key={index}
               name={executive.name}
               position={executive.position}
               image={executive.imageUrl}

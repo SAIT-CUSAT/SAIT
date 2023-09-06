@@ -36,10 +36,10 @@ function FeaturedAlumni() {
         </p>
         {/* cards */}
         <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[14rem] xl:-bottom-[9rem] gap-3">
-          
-          {alumnis.map((alumni) => (
+          {alumnis.map((alumni, index) => (
             <div key={alumni.id}>
               <FeaturedAlumniCard
+                key={index}
                 title={alumni.name}
                 description={alumni.company}
                 img={alumni.img}
