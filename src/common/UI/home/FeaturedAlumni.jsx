@@ -43,7 +43,7 @@ function FeaturedAlumni() {
                 title={alumni.name}
                 description={alumni.company}
                 img={alumni.img}
-              ></FeaturedAlumniCard>
+              />
             </div>
           ))}
           <Link

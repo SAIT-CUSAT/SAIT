@@ -1,4 +1,6 @@
 import React from "react";
+// router
+import { useRouter } from "next/router";
 import Sait from "./Sait";
 import Image from "next/image";
 import SaitLogo from "../../../../public/logo masked.png";
@@ -6,6 +8,7 @@ import Herol from "../../../../public/assets/images/saithero.png";
 import HeroMob from "../../../../public/assets/images/herolmob.svg"
 
 const Hero = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col md:flex-row w-screen relative overflow-x-hidden">
       <div className="">
@@ -29,7 +32,9 @@ const Hero = () => {
             accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
             optio.
           </p>
-          <button className="px-14 py-2 hover:bg-blue-900 hover:text-white duration-500 border-2 border-blue-900 font-bold text-blue-900">
+          <button onClick={() => {
+            router.push("#upCommingEvents", undefined, { scroll: true });
+          }} className="px-14 py-2 hover:bg-blue-900 hover:text-white duration-500 border-2 border-blue-900 font-bold text-blue-900">
             EXPLORE
           </button>
         </div>

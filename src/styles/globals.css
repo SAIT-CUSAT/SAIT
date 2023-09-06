@@ -3,6 +3,9 @@
 @tailwind utilities;
 @import '~swiper/swiper-bundle.css';
 
+html {
+    scroll-behavior: smooth;
+}
 
 body{
     overflow-x: hidden;

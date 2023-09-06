@@ -14,11 +14,13 @@ const Allevent = ({ data }) => {
       </div>
       <div className="p-5 w-full grid justify-items-center mx-auto grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {data?.map((event) => (
-          <EventCard
-            img={event.ImageUrl}
-            text={event.title}
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringill"
-          />
+          <div key={event._id} className="">
+              <EventCard
+                img={event.ImageUrl}
+                text={event.title}
+                para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringill"
+              />
+          </div>
         ))}
       </div>
     </div>

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../../../sanity/lib/client';
-import Card from '../UI/home/Card';
 import AlumniModal from './AlumniModal'; // Import your AlumniModal component
 import AlumniCard from '../UI/alumni/AlumniCard';
 
-const AlumniList = () => {
+const   AlumniList = () => {
   const [alumniData, setAlumniData] = useState([]);
   const [selectedAlumni, setSelectedAlumni] = useState(null); // State to store selected alumni details
 
@@ -22,8 +21,8 @@ const AlumniList = () => {
     client
       .fetch(query)
       .then((data) => {
-        // Set the fetched data in the state
         setAlumniData(data);
+        console.log(data)
       })
       .catch((error) => {
         console.error('Error fetching alumni data:', error);
@@ -44,8 +43,8 @@ const AlumniList = () => {
         FEATURED ALUMNI
       </h1>
       {alumniData.map((alumni) => (
-        <div className='w-max' key={alumni.name} onClick={() => openModal(alumni)}>
-          <AlumniCard title={alumni.name} img={alumni.imageUrl}></AlumniCard>
+        <div className='w-max' key={alumni._id} onClick={() => openModal(alumni)}>
+          <AlumniCard title={alumni.name} img={alumni.imageUrl} company={alumni.company} designation={alumni.designation} />
         </div>
       ))}
 
