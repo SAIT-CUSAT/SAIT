@@ -9,6 +9,11 @@ const placement = {
         type: 'string',
       },
       {
+        name: 'website',
+        title: 'Website Link',
+        type: 'string',
+      },
+      {
         name: 'designationOffering',
         title: 'Designation Offering',
         type: 'string',

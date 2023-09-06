@@ -1,82 +1,32 @@
-import Head from "next/head";
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Carousel from "../common/components/curosel";
-
-const companies = [
-  {
-    id: 1,
-    name: "Cognizant Technology solution",
-    dept: "information technology",
-    logo: "/company_logo/cognizant.png",
-    jobs: 784,
-  },
-  {
-    id: 2,
-    name: "accenture",
-    dept: "information technology",
-    logo: "/company_logo/accenter.png",
-    jobs: 254,
-  },
-  {
-    id: 3,
-    name: "concentrix",
-    dept: "information technology",
-    logo: "/company_logo/concentric.png",
-    jobs: 124,
-  },
-  {
-    id: 4,
-    name: "Tata consultancy services (TCS)",
-    dept: "information technology",
-    logo: "/company_logo/tcs.png",
-    jobs: 654,
-  },
-  {
-    id: 5,
-    name: "Wipro",
-    dept: "information technology",
-    logo: "/company_logo/wipro.png",
-    jobs: 95,
-  },
-  {
-    id: 6,
-    name: "Infoys",
-    dept: "information technology",
-    logo: "/company_logo/infocys.png",
-    jobs: 562,
-  },
-  {
-    id: 5,
-    name: "ibm",
-    dept: "information technology",
-    logo: "/company_logo/ibm.png",
-    jobs: 320,
-  },
-  {
-    id: 8,
-    name: "tech mahindra",
-    dept: "information technology",
-    logo: "/company_logo/mahindra.png",
-    jobs: 80,
-  },
-  {
-    id: 9,
-    name: "amacon.com",
-    dept: "Retail and wholesale",
-    logo: "/company_logo/amazon.png",
-    jobs: 61,
-  },
-  {
-    id: 10,
-    name: "Teleperformance",
-    dept: "Telecommunications",
-    logo: "/company_logo/telecom.png",
-    jobs: 154,
-  },
-];
+import { client } from "../../sanity/lib/client";
+import Link from 'next/link';
 
 const PlacementPage = () => {
+  const [placements, setPlacements] = useState([]);
+  useEffect(() => {
+    const query = `*[_type == "placement"] {
+      companyName,
+      website,
+      designationOffering,
+      packageOffered,
+      numberOfAlumni,
+      numberOfEmployees,
+      'logoUrl': logo.asset->url // Get the URL of the logo image
+    }`;
+
+    // Fetch placement data
+    client
+      .fetch(query)
+      .then((data) => {
+        setPlacements(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching placement data:', error);
+      });
+  }, []);
   return (
     <div className="container mx-auto flex-col justify-between ">
       {/* <Hero /> */}
@@ -88,7 +38,7 @@ const PlacementPage = () => {
           </h1>
         </div>
         <div className="flex my-10 mx-10 flex-wrap justify-center items-center">
-          <Carousel />
+          <Carousel placements={placements} />
         </div>
         <div className="mx-10 text-center my-14 text-blue-500">
           <p>
@@ -104,29 +54,30 @@ const PlacementPage = () => {
         </div>
       </div>
       <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
-                {companies.map((company) => (
-                    <div key={companies.id} className='flex justify-between items-center  rounded-md p-10 bg-blue-900' >
+                {placements.map((company) => (
+                    <div key={company._id} className='flex justify-between items-center  rounded-md p-10 bg-blue-900' >
                         <div className="flex flex-wrap gap-3 justify-between max-[677px]:flex-col ">
-                            <div>
+                            <div className='w-32'>
                                 <Image
-                                    src={company.logo}
+                                    src={company.logoUrl}
                                     alt="Picture of the author"
                                     width={66}
                                     height={66}
+                                    className='object-contain w-24 h-24'
                                 />
                             </div>
                             <div className="flex flex-wrap flex-col justify-between  text-stone-200 capitalize">
-                                <h1 className='text-3xl max-[769px]:text-xl font-semibold '>{company.name}</h1>
-                                <p className='text-base'>{company.dept}</p>
+                                <h1 className='text-3xl max-[769px]:text-xl font-semibold '>{company.companyName}</h1>
+                                <p className='text-xl'>number of Employees: {company.numberOfEmployees}+</p>
                             </div>
                         </div>
                         <div className="flex max-[677px]:flex-col">
                             <button class="bg-transparent text-stone-200 font-bold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
-                                {company.jobs}+ Jobs
+                                {company.numberOfAlumni} of our Alumnis are currently working here
                             </button>
-                            {/* <button class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
+                            <Link href={company.website} class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
                                 know more
-                            </button> */}
+                            </Link>
                         </div>
                     </div>
                 ))}
