@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Carousel from "../common/components/curosel";
 import { client } from "../../sanity/lib/client";
+import Link from 'next/link';
 
 const PlacementPage = () => {
   const [placements, setPlacements] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const query = `*[_type == "placement"] {
       companyName,
+      website,
       designationOffering,
       packageOffered,
       numberOfAlumni,
@@ -21,11 +22,9 @@ const PlacementPage = () => {
       .fetch(query)
       .then((data) => {
         setPlacements(data);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching placement data:', error);
-        setIsLoading(false);
       });
   }, []);
   return (
@@ -39,7 +38,7 @@ const PlacementPage = () => {
           </h1>
         </div>
         <div className="flex my-10 mx-10 flex-wrap justify-center items-center">
-          <Carousel />
+          <Carousel placements={placements} />
         </div>
         <div className="mx-10 text-center my-14 text-blue-500">
           <p>
@@ -56,7 +55,7 @@ const PlacementPage = () => {
       </div>
       <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
                 {placements.map((company) => (
-                    <div key={company.id} className='flex justify-between items-center  rounded-md p-10 bg-blue-900' >
+                    <div key={company._id} className='flex justify-between items-center  rounded-md p-10 bg-blue-900' >
                         <div className="flex flex-wrap gap-3 justify-between max-[677px]:flex-col ">
                             <div className='w-32'>
                                 <Image
@@ -76,9 +75,9 @@ const PlacementPage = () => {
                             <button class="bg-transparent text-stone-200 font-bold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
                                 {company.numberOfAlumni} of our Alumnis are currently working here
                             </button>
-                            <button class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
+                            <Link href={company.website} class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded">
                                 know more
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}
