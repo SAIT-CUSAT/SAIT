@@ -7,7 +7,7 @@ function Placements() {
   const [placements, setPlacements] = useState([]);
 
   useEffect(() => {
-    const query = `*[_type == "placement"] {
+    const query = `*[_type == "placement"] | order(_createdAt desc) [0..2] {
       companyName,
       designationOffering,
       packageOffered,
