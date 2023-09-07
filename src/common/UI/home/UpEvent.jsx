@@ -25,7 +25,7 @@ const UpcommingEvent = ({upCommingPost}) => {
           ))}
       </div>
       <div className="text-end mr-10">
-        <Link href="/event">
+        <Link href="/events">
           <p className="uppercase text-blue-900 font-sans cursor-e-resize">
             view all events →
           </p>

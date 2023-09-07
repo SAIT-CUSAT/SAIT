@@ -9,10 +9,17 @@ function NoteList() {
   const [searchButtonClicked, setSearchButtonClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit } = useForm();
-  
+  const [CheckSearch, setCheckSearch] = useState(true);
+
+  useEffect(() => {
+    console.log("Loading status:", isLoading);
+  }, [isLoading]);
+
   const handleFilterSubmit = (data) => {
     console.log("Filter data:", data);
     setSearchButtonClicked(true);
+    setCheckSearch(false);
+    setIsLoading(true);
 
     // Construct the GROQ query based on selected values
     let query = `*[_type == "note"`;
@@ -48,6 +55,7 @@ function NoteList() {
   };
 
   const handleSearch = () => {
+    setCheckSearch(false);
     setSearchButtonClicked(true);
     setIsLoading(true);
     // Fetch data based on the search query
@@ -79,10 +87,7 @@ function NoteList() {
     }
     setSearchQuery("");
   };
-  const noResultsFound =
-    searchButtonClicked &&
-    searchQuery.trim() !== "" &&
-    searchResults.length === 0;
+  const noResultsFound = searchButtonClicked && searchResults.length === 0;
   return (
     <div className="p-4">
       <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
@@ -146,44 +151,50 @@ function NoteList() {
           </button>
         </form>
       </div>
-      {/* Display search results */}
-      <ul className="w-full min-h-[20rem] text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-        {isLoading ? (
-          <p className="text-center md:col-span-3 sm:col-span-2">Loading...</p>
-        ) : searchButtonClicked &&
-          searchQuery.trim() !== "" &&
-          searchResults.length === 0 ? (
-          <p
-            className={`w-full text-center md:col-span-3 sm:col-span-2 text-gray-600 ${
-              noResultsFound ? "block" : "hidden"
-            }`}
-          >
-            NO RESULTS FOUND...
-          </p>
-        ) : (
-          searchResults.map((note) => (
-            <Link key={note.topic} href={note.link}>
-              <div className="border-2 border-blue-900 rounded-xl bg-gray-400 p-4 flex items-center gap-3 h-max">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-8 h-8"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                  />
-                </svg>
-                <h3 className="font-bold text-lg">{note.topic}</h3>
-              </div>
-            </Link>
-          ))
-        )}
-      </ul>
+
+      {CheckSearch ? (
+        <div className="flex text-xl font-bold flex-row justify-center text-gray-600 items-center gap-2 mb-4 min-h-[20rem]">
+          Search for Notes...
+        </div>
+      ) : (
+        <ul className="w-full min-h-[20rem] text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+          {isLoading ? (
+            <p className="w-full text-xl font-bold h-full flex justify-center items-center text-center md:col-span-3 sm:col-span-2 text-gray-600">
+              Loading...
+            </p>
+          ) : noResultsFound ? (
+            <p
+              className={`w-full text-xl font-bold h-full flex justify-center items-center text-center md:col-span-3 sm:col-span-2 text-gray-600 ${
+                noResultsFound ? "block" : "hidden"
+              }`}
+            >
+              NO RESULTS FOUND...
+            </p>
+          ) : (
+            searchResults.map((note) => (
+              <Link key={note.topic} href={note.link}>
+                <div className="border-2 border-blue-900 rounded-xl bg-gray-400 p-4 flex items-center gap-3 h-max">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-8 h-8"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                    />
+                  </svg>
+                  <h3 className="font-bold text-lg">{note.topic}</h3>
+                </div>
+              </Link>
+            ))
+          )}
+        </ul>
+      )}
     </div>
   );
 }

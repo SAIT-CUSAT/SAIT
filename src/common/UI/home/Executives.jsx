@@ -5,7 +5,7 @@ import { client } from '../../../../sanity/lib/client'
 function Executives() {
   const [executives, setExecutives] = useState([]);
   useEffect(() => {
-    const query = `*[_type == "executive"] {
+    const query = `*[_type == "executive"] | order(_createdAt asc) [0..4] {
       name,
       position,
       "imageUrl": image.asset->url,

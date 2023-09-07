@@ -18,6 +18,11 @@ const event = {
       },
     },
     {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
       name: "images",
       title: "Images",
       type: "array",
@@ -28,6 +33,7 @@ const event = {
       title: "Start Date",
       type: "datetime",
     },
+    
     {
       name: 'speakers',
       title: 'Speakers',
@@ -54,17 +60,6 @@ const event = {
       name: "venue",
       title: "Venue",
       type: "string",
-    },
-    {
-      name: "speaker",
-      title: "Speaker",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "speaker" }] }],
-    },
-    {
-      name: "isCompleted",
-      title: "Is Completed",
-      type: "boolean",
     },
     {
       name: 'status',
