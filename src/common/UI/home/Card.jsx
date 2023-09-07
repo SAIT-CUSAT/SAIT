@@ -21,7 +21,7 @@ const Card = ({title,description,img,speakers}) => {
               {speakers?.length > 0 && (<p class="text-sm text-slate-400">
                 By
                 {speakers?.map((speaker, index) => (
-                  <span className="">
+                  <span key={index} className="">
                     {" " + speaker.name}
                     {index === speakers.length - 1
                       ? "."

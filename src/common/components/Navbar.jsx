@@ -210,6 +210,14 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
+                  href="executives/"
+                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                >
+                  Executives
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/notes"
                   class="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >

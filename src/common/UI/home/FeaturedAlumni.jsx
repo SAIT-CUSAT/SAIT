@@ -1,28 +1,39 @@
-import React from "react";
+import {React,useState,useEffect} from "react";
 import FeaturedAlumniCard from "./FeaturedAlumniCard";
 import saitimage from "../../../../public/logo white.png";
 import Link from "next/link";
-const alumnis = [
-  {
-    id: 1,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-  {
-    id: 2,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-  {
-    id: 3,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-];
+import { client } from "../../../../sanity/lib/client";
+
+const openModal = (alumni) => {
+  setSelectedAlumni(alumni);
+};
+
+const closeModal = () => {
+  setSelectedAlumni(null);
+};
 function FeaturedAlumni() {
+  const [alumnis, setalumnis] = useState([]);
+  useEffect(() => {
+    // Fetch alumni data using GROQ query
+    const query = `*[_type == "alumni"] {
+    name,
+    company,
+    designation,
+    "imageUrl": image.asset->url,
+    yearOfPassout,
+    bio
+  }`;
+
+    client
+      .fetch(query)
+      .then((data) => {
+        // Set the fetched data in the state
+        setalumnis(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching alumni data:", error);
+      });
+  }, []);
   return (
     <div className="md:h-[45rem]">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
@@ -35,14 +46,13 @@ function FeaturedAlumni() {
           fringilla luctus, nunc nisl aliquam nisl, eu aliquam nunc nisl eu.
         </p>
         {/* cards */}
-        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[14rem] xl:-bottom-[9rem] gap-3">
-          
+        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[16rem] xl:-bottom-[7.6rem] gap-3">
           {alumnis.map((alumni) => (
             <div key={alumni.id}>
               <FeaturedAlumniCard
                 title={alumni.name}
                 description={alumni.company}
-                img={alumni.img}
+                img={alumni.imageUrl}
               ></FeaturedAlumniCard>
             </div>
           ))}
