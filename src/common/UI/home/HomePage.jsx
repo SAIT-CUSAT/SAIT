@@ -24,7 +24,7 @@ const HomePage = () => {
       status,
     }`;
 
-    const queryActivity = `*[_type == "event" && status == "activity"] | order(startDate asc) {
+    const queryActivity = `*[_type == "event" && status == "activity"] | order(startDate asc) [0...2] {
       _id,
       title,
       slug,
@@ -65,7 +65,9 @@ const HomePage = () => {
       {upCommingPost && upCommingPost.length > 0 && (
         <UpcommingEvent upCommingPost={upCommingPost} />
       )}
-      {ActivityPost && ActivityPost.length > 0 && <Activities ActivityPost={ActivityPost} />}
+      {ActivityPost && ActivityPost.length > 0 && (
+        <Activities ActivityPost={ActivityPost} />
+      )}
       <Placements />
       <FeaturedAlumni />
       <Executives />

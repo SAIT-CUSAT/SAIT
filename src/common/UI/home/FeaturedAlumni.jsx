@@ -35,25 +35,27 @@ function FeaturedAlumni() {
       });
   }, []);
   return (
-    <div className="md:h-[45rem]">
+    <div className="lg:h-[35rem] md:h-[45rem]">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
           FEATURED ALUMNI
         </h1>
-        <p className="xl:w-1/4 w-full mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla luctus, nunc nisl aliquam nisl, eu aliquam nunc nisl eu.
+        <p className="xl:w-[30rem] w-full mb-6">
+          Meet our illustrious alumni who have made their mark in the world of
+          Information Technology. From influential tech entrepreneurs to top
+          executives at global IT corporations, our department's renowned alumni
+          continue to shape the future of technology and innovation.
         </p>
         {/* cards */}
-        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[16rem] xl:-bottom-[7.6rem] gap-3">
-          {alumnis.map((alumni) => (
+        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[14rem] xl:-bottom-[9rem] gap-3">
+          {alumnis.map((alumni, index) => (
             <div key={alumni.id}>
               <FeaturedAlumniCard
+                key={index}
                 title={alumni.name}
                 description={alumni.company}
-                img={alumni.imageUrl}
-              ></FeaturedAlumniCard>
+                img={alumni.img}
+              />
             </div>
           ))}
           <Link

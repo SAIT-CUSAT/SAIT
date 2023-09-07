@@ -48,7 +48,7 @@ export default function Carousel({data}) {
   }, [currentIndex]);
 
   return (
-    <div className="w-100 h-[20rem] p-4 relative ">
+    <div className="w-100 h-[20rem] p-4 relative "> 
       <div className="flex h-full">
         <Image
           src={images[currentIndex].src}

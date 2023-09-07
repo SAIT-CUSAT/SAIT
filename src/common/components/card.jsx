@@ -4,7 +4,7 @@ const Cards = (props) => {
   const displayedText =
     props.para.length > 50 ? `${props.para.slice(0, 70)}...` : props.para;
   return (
-    <div class="rounded bg-white w-80 h-full border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-between items-center">
+    <div key={props.key} class="rounded bg-white w-80 h-full border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-between items-center">
       <div className="">
         <div class="overflow-hidden bg-white rounded text-slate-500 shadow-slate-200">
           <figure>
@@ -22,7 +22,7 @@ const Cards = (props) => {
               <p class="text-sm text-slate-400">
                 {props.speakers?.length > 0 && "By"}   
                 {props.speakers?.map((speaker, index) => (
-                  <span className="">
+                  <span key={index} className="">
                     {" " + speaker.name}
                     {index === props.speakers.length - 1
                       ? "."

@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-const PlacementCard = ({ title, description, img, speakers }) => {
+const PlacementCard = ({ title, description, img, speakers,key }) => {
   const displayedText =
     description?.length > 50 ? `${description.slice(0, 70)}...` : description;
   return (
-    <div class="rounded lg:h-56 lg:w-64 w-52 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
-      <div class="h-full flex flex-col justify-between bg-white rounded shadow-md text-slate-500 shadow-slate-200">
+    <div key={key} class="rounded lg:h-56 lg:w-64 w-52 border-2 bg-white overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
+      <div class="h-full flex flex-col justify-between rounded shadow-md text-slate-500 shadow-slate-200">
         <Image
           width={300}
           height={300}

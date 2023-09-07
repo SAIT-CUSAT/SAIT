@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-const Card = ({title,description,img,speakers}) => {
+const Card = ({title,description,img,speakers,key}) => {
   const displayedText = description?.length > 50 ? `${description.slice(0, 70)}...` : description;
   return (
-    <div class="rounded w-64 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
+    <div key={key} class="rounded w-64 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
       <div className="">
         <div class="overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
           <figure>

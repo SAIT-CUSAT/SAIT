@@ -6,7 +6,7 @@ import Bg from "../../../../public/bg-image.png";
 const UpcommingEvent = ({upCommingPost}) => {
   console.log(upCommingPost)
   return (
-    <div className="container flex flex-col mx-auto my-14">
+    <div id="upCommingEvents"  className="container flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-6">
         <h1 className="md:text-3xl text-2xl font-bold text-blue-900 md:tracking-[1.5em] tracking-normal font-sans uppercase">
           Upcoming Events
@@ -25,7 +25,7 @@ const UpcommingEvent = ({upCommingPost}) => {
           ))}
       </div>
       <div className="text-end mr-10">
-        <Link href="/event">
+        <Link href="/events">
           <p className="uppercase text-blue-900 font-sans cursor-e-resize">
             view all events →
           </p>

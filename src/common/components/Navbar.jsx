@@ -27,7 +27,7 @@ const Navbar = () => {
                 SAIT{" "}
               </h1>
             </Link>
-            <div class="relative hidden lg:block">
+            {/* <div class="relative hidden lg:block">
               <input
                 type="text"
                 id="search-navbar"
@@ -50,10 +50,10 @@ const Navbar = () => {
                 </svg>
                 <span class="sr-only">Search icon</span>
               </div>
-            </div>
+            </div> */}
           </div>
           <div class="flex md:order-1">
-            <button
+            {/* <button
               type="button"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
@@ -75,7 +75,7 @@ const Navbar = () => {
                 ></path>
               </svg>
               <span class="sr-only">Search</span>
-            </button>
+            </button> */}
 
             <button
               data-collapse-toggle="navbar-search"
