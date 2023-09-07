@@ -6,7 +6,7 @@ const FeaturedAlumniCard = ({ title, description, img, speakers,key }) => {
   return (
     <div key={key} class="rounded h-full lg:w-64 w-56 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
       <div class="flex flex-col justify-center items-center w-full overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
-        <figure className="w-40">
+        <figure className="w-full">
           <Image
             width={300}
             height={300}
