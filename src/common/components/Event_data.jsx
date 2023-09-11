@@ -28,7 +28,7 @@ const Event_data = () => {
               alt="office content 1"
             />
             <img
-              class="mt-4 w-full lg:mt-10 rounded-lg"
+              class="mt-4 w-full rounded-lg"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
               alt="office content 2"
             />

@@ -21,26 +21,23 @@ const Landing = () => {
         </div>
         <div className="md:w-1/2 m-10 flex flex-col justify-center items-center">
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            magni voluptatum in vel similique adipisci illum dicta sunt nisi
-            consequatur perferendis dolor libero dignissimos magnam veritatis
-            accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
-            optio.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Expedita magni voluptatum in vel similique adipisci illum dicta sunt
-            nisi consequatur perferendis dolor libero dignissimos magnam
-            veritatis accusantium soluta exercitationem at, perspiciatis ducimus
-            fuga quia optio.
+            Experience the vibrancy of our Information Technology department
+            through a diverse range of events, meticulously organized by the
+            Students Association of Information Technology (SAIT) in
+            collaboration with our department. These events are carefully
+            curated to provide students with a holistic learning experience,
+            blending education, innovation, and networking. From hackathons that
+            challenge your problem-solving abilities to seminars featuring
+            industry leaders who share their expertise, our events are a gateway
+            to a world of knowledge and opportunities.
           </p>
           <p className="ml-10 my-5 hidden lg:block">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            magni voluptatum in vel similique adipisci illum dicta sunt nisi
-            consequatur perferendis dolor libero dignissimos magnam veritatis
-            accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
-            optio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            magni voluptatum in vel similique adipisci illum dicta sunt nisi
-            consequatur perferendis dolor libero dignissimos magnam veritatis
-            accusantium soluta exercitationem at, perspiciatis ducimus fuga quia
-            optio.
+            We also offer hands-on workshops and practical sessions, ensuring
+            that students remain at the forefront of technological advancements.
+            Whether you're a student seeking to expand your horizons or an
+            industry professional looking to connect with emerging talent, our
+            events offer a platform for growth and engagement. Join us in our
+            exciting IT journey and stay updated on our upcoming events!
           </p>
         </div>
       </div>
