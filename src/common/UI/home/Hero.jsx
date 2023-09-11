@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="w-5/6 md:w-full lg:w-3/4 ml-20 lg:ml-20 leading-5">
           <p className="lg:my-9 md:my-5 my-8">
             The Student Association of IT (SAIT) enhances the experience,
-            offering workshops, magazines, and tech projects. SAIT  fosters
+            offering workshops, magazines, and tech projects. SAIT fosters
             collaboration, feedback, and student growth.
           </p>
           <button

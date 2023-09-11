@@ -15,7 +15,7 @@ function Activities({ ActivityPost }) {
           informative seminars to engaging tech competitions, these gatherings
           brought together students, faculty, and industry experts for knowledge
           sharing and community building. They inspire us to continue shaping
-          our department's future through meaningful experiences for our
+          our department&apos;s future through meaningful experiences for our
           students.
         </p>
 

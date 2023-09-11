@@ -33,11 +33,11 @@ function HostelList() {
 
         <div className="mx-10 text-center my-14 text-blue-500">
           <p>
-            Welcome to our "Available Hostels" page, your one-stop resource for
+            Welcome to our &quot;Available Hostels&quot; page, your one-stop resource for
             finding nearby private hostels quickly and effortlessly. We
             understand the importance of convenient accommodation for students,
-            and we've gathered a comprehensive list of hostels in the vicinity,
-            complete with phone numbers and locations. Whether you're a local
+            and we&apos;ve gathered a comprehensive list of hostels in the vicinity,
+            complete with phone numbers and locations. Whether you&apos;re a local
             student seeking off-campus housing or an out-of-town student in need
             of a comfortable stay, our page is designed to simplify your search
             process. With this valuable information at your fingertips, you can

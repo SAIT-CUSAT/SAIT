@@ -34,7 +34,7 @@ const Landing = () => {
           <p className="ml-10 my-5 hidden lg:block">
             We also offer hands-on workshops and practical sessions, ensuring
             that students remain at the forefront of technological advancements.
-            Whether you're a student seeking to expand your horizons or an
+            Whether you&apos;re a student seeking to expand your horizons or an
             industry professional looking to connect with emerging talent, our
             events offer a platform for growth and engagement. Join us in our
             exciting IT journey and stay updated on our upcoming events!

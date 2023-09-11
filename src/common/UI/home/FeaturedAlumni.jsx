@@ -43,7 +43,7 @@ function FeaturedAlumni() {
         <p className="xl:w-[30rem] w-full mb-6">
           Meet our illustrious alumni who have made their mark in the world of
           Information Technology. From influential tech entrepreneurs to top
-          executives at global IT corporations, our department's renowned alumni
+          executives at global IT corporations, our department&apos;s renowned alumni
           continue to shape the future of technology and innovation.
         </p>
         {/* cards */}

@@ -47,7 +47,7 @@ const PlacementPage = () => {
             students in top-notch companies within the IT industry. Our strong
             ties with renowned recruiters mean that our graduates have the
             opportunity to kickstart their careers with the best in the
-            business. It's like a backstage pass to the world of Information
+            business. It&apos;s like a backstage pass to the world of Information
             Technology where they can shine and make their mark.
           </p>
         </div>
@@ -111,7 +111,7 @@ const PlacementPage = () => {
             faculty support, enhances the student experience through workshops,
             seminars, tech projects, and department magazines. SAIT fosters a
             career-specific outlook and maintains an open feedback forum,
-            ensuring the department's continual growth and excellence. Together,
+            ensuring the department&apos;s continual growth and excellence. Together,
             we shape the future of IT with innovation, dedication, and
             student-centricity.
           </p>
