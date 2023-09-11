@@ -1,28 +1,39 @@
-import React from "react";
+import {React,useState,useEffect} from "react";
 import FeaturedAlumniCard from "./FeaturedAlumniCard";
 import saitimage from "../../../../public/logo white.png";
 import Link from "next/link";
-const alumnis = [
-  {
-    id: 1,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-  {
-    id: 2,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-  {
-    id: 3,
-    name: "rahul",
-    company: "IBM",
-    img: saitimage,
-  },
-];
+import { client } from "../../../../sanity/lib/client";
+
+const openModal = (alumni) => {
+  setSelectedAlumni(alumni);
+};
+
+const closeModal = () => {
+  setSelectedAlumni(null);
+};
 function FeaturedAlumni() {
+  const [alumnis, setalumnis] = useState([]);
+  useEffect(() => {
+    // Fetch alumni data using GROQ query
+    const query = `*[_type == "alumni"] {
+    name,
+    company,
+    designation,
+    "imageUrl": image.asset->url,
+    yearOfPassout,
+    bio
+  }`;
+
+    client
+      .fetch(query)
+      .then((data) => {
+        // Set the fetched data in the state
+        setalumnis(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching alumni data:", error);
+      });
+  }, []);
   return (
     <div className="lg:h-[35rem] md:h-[45rem]">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
