@@ -13,11 +13,15 @@ const Events = () => {
   useEffect(() => {
     // query events data using GROQ query
     const query = `*[_type == "event"] {
+      _id,
       title,
       slug,
-      "ImageUrl": images[0].asset->url,
+      description,
+      "images": images[].asset->url,
       startDate,
+      endDate,
       speakers,
+      venue,
       status,
     }`;
 
@@ -41,7 +45,7 @@ const Events = () => {
     <div>
         <Landing />
         <Upevent data={upcommingEvents} />
-        <Allevent data={EventsData} />
+        <Allevent data={pastEvents} />
     </div>
   )
 }

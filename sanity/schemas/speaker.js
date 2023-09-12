@@ -16,7 +16,7 @@ const speaker= {
     {
       "name": "linkedin",
       "title": "LinkedIn Profile",
-      "type": "url"
+      "type": "string"
     }
   ]
 }

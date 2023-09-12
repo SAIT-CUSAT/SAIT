@@ -2,19 +2,38 @@ import Cards from "../../components/card";
 import Landing from "../events/Landing";
 import Link from "next/link";
 import Bg from "../../../../public/bg-image.png";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment, incrementByAmount } from "../../../features/counter/counterSlice";
 
-const UpcommingEvent = ({upCommingPost}) => {
-  console.log(upCommingPost)
+const UpcommingEvent = ({ upCommingPost }) => {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  console.log(upCommingPost);
   return (
-    <div id="upCommingEvents"  className="container flex flex-col mx-auto my-14">
+    <div id="upCommingEvents" className="container flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-6">
         <h1 className="md:text-3xl text-2xl font-bold text-blue-900 md:tracking-[1.5em] tracking-normal font-sans uppercase">
           Upcoming Events
         </h1>
+        <div>
+          <button
+            aria-label="Increment value"
+            onClick={() => dispatch(incrementByAmount(5))}
+          >
+            Increment
+          </button>
+          <span>{count}</span>
+          <button
+            aria-label="Decrement value"
+            onClick={() => dispatch(decrement())}
+          >
+            Decrement
+          </button>
+        </div>
       </div>
       <div className="pt-6 px-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
         {upCommingPost.length > 0 &&
-          upCommingPost?.map((post,index) => (
+          upCommingPost?.map((post, index) => (
             <Cards
               key={index}
               img={post.imageUrl1}
