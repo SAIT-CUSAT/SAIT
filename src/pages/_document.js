@@ -18,7 +18,10 @@ class AppDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1714173809905801"
+            crossorigin="anonymous"></script>
+        </Head>
         <body className="bg-[#E7ECEF]">
           <Main />
           <NextScript />
