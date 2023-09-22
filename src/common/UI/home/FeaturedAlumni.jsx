@@ -1,6 +1,5 @@
 import {React,useState,useEffect} from "react";
 import FeaturedAlumniCard from "./FeaturedAlumniCard";
-import saitimage from "../../../../public/logo white.png";
 import Link from "next/link";
 import { client } from "../../../../sanity/lib/client";
 
@@ -15,7 +14,7 @@ function FeaturedAlumni() {
   const [alumnis, setalumnis] = useState([]);
   useEffect(() => {
     // Fetch alumni data using GROQ query
-    const query = `*[_type == "alumni"] {
+    const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..2] {
     name,
     company,
     designation,
@@ -51,10 +50,9 @@ function FeaturedAlumni() {
           {alumnis.map((alumni, index) => (
             <div key={alumni.id}>
               <FeaturedAlumniCard
-                key={index}
                 title={alumni.name}
                 description={alumni.company}
-                img={alumni.img}
+                img={alumni.imageUrl}
               />
             </div>
           ))}

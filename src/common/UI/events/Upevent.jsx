@@ -15,7 +15,7 @@ const Upevent = ({ data }) => {
     <div className="container h-full flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-14">
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
-          UPCOMMING EVENTS
+          UPCOMING EVENTS
         </h1>
       </div>
       <div className="p-5 w-full grid justify-items-center mx-auto grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
