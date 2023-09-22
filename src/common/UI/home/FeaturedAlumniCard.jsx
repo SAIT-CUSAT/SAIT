@@ -4,7 +4,7 @@ const FeaturedAlumniCard = ({ title, description, img, speakers,key }) => {
   const displayedText =
     description?.length > 50 ? `${description.slice(0, 70)}...` : description;
   return (
-    <div key={key} class="rounded h-full lg:w-64 w-56 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
+    <div key={key} class="rounded h-[380px] lg:w-[298px]  border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center mr-[65rem] mb-[-10px] ">
       <div class="flex flex-col justify-center items-center w-full overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
         <figure className="w-full">
           <Image

@@ -60,9 +60,9 @@ function FeaturedAlumni() {
           ))}
           <Link
             href="/alumni"
-            className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-32 mt-12"
+            className="self-center sm:mr-[30px]   sm:ml-5 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-32 mt-12 "
           >
-            VIEW ALL
+            VIEW ALL -&gt;
           </Link>
         </div>
       </div>
