@@ -13,13 +13,13 @@ const EventsData = () => {
             {/* image 0 */}
             <div className="flex flex-wrap gap-10">
               <div>
-                <Image
+                {eventImages && <Image
                   className="h-auto max-w-full rounded-lg"
                   src={eventImages[0]}
                   width={300}
                   height={300}
                   alt=""
-                />
+                />}
               </div>
             </div>
             <br />
