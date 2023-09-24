@@ -7,7 +7,7 @@ const Landing = () => {
   return (
     <div className="flex flex-col">
       <div className="flex items-center md:flex-row flex-col">
-        <div className="w-1/2 h-max  relative">
+        <div className="md:block hidden w-1/2 h-max  relative">
           <Image
             className=" w-full h-full md:h-11/12 xl:w-[48rem] lg:w-[55rem] md:w-[40rem]"
             src={Event}
@@ -18,6 +18,12 @@ const Landing = () => {
             src={Text}
             alt=""
           />
+        </div>
+        {/* heading named Upcomming Events and Other Stuffs */}
+        <div className="md:hidden md:w-1/2 w-full flex flex-col justify-center items-center">
+          <h1 className="text-4xl font-bold text-center">
+            Events
+          </h1>
         </div>
         <div className="md:w-1/2 m-10 flex flex-col justify-center items-center">
           <p className="">
