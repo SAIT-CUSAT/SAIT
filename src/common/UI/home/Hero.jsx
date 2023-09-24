@@ -31,15 +31,22 @@ const Hero = () => {
         />
         <p className="w-5/6 ml-16 lg:w-3/4 md:w-full leading-5 ">
           The Department of Information Technology at Cochin University of
-          Science and Technology, founded in 1995, is a hub of innovation. Our
-          dedicated faculty explores user-centric interfaces, cybersecurity, and
-          AI, pushing IT boundaries.
+          Science and Technology, founded in 1995, is a dynamic hub of
+          innovation. With a dedicated faculty at the forefront, we actively
+          explore user-centric interfaces, delve into the complexities of
+          cybersecurity, and venture into the realms of artificial intelligence,
+          continuously pushing the boundaries of Information Technology. Our
+          commitment to excellence and innovation remains unwavering as we
+          navigate the ever-evolving landscape of IT, offering students a
+          holistic education in cutting-edge technologies and practices.
         </p>
         <div className="w-5/6 md:w-full lg:w-3/4 ml-20 lg:ml-20 leading-5">
           <p className="lg:my-9 md:my-5 my-8">
-            The Student Association of IT (SAIT) enhances the experience,
-            offering workshops, magazines, and tech projects. SAIT fosters
-            collaboration, feedback, and student growth.
+            The Student Association of IT (SAIT) enriches the student experience
+            through workshops, magazines, and technology projects. SAIT fosters
+            collaboration, feedback, and student growth, creating a vibrant
+            environment for students to learn, engage, and develop in the
+            ever-evolving field of Information Technology.
           </p>
           <button
             onClick={() => {
