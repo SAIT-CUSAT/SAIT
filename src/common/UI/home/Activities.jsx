@@ -20,10 +20,10 @@ function Activities({ ActivityPost }) {
         </p>
 
         {/* cards */}
-        <div className="flex items-center md:flex-row flex-col md:absolute md:right-4 xl:-bottom-[20rem] lg:-bottom-[24rem] gap-y-3 mr-[40rem] mb-[7.4rem] ">
+        <div className="flex gap-4 items-center md:flex-row flex-col md:absolute md:right-4 md:-bottom-[18rem] xl:-bottom-[10.1rem] lg:-bottom-[18rem] gap-y-3">
           <Link
             href={"/events"}
-            className="self-center mr-[10rem] font-bold text-blue-900 lg:text-center mt-[2.5rem]"
+            className="self-center mt-10 mr-6 font-bold text-blue-900 lg:text-center ml-3"
           >
             VIEW ALL ACTIVITIES
           </Link>

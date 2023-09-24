@@ -48,7 +48,7 @@ function Placements() {
           </p>
         </div>
         {/* cards */}
-        <div className="flex flex-wrap mt-5 items-center md:flex-row flex-col md:absolute xl:-bottom-[6.1rem] lg:-bottom-[1rem]  md:left-[16rem] mb-[-130px]">
+        <div className="flex gap-5 flex-wrap mt-5 items-center md:flex-row flex-col md:absolute xl:-bottom-[1rem] lg:-bottom-[9rem]  md:left-[6rem] mb-[-130px]">
           {placements.map((placement, index) => (
             <div key={index}>
               <PlacementCard
