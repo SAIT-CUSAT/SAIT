@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { client } from '../../../sanity/lib/client';
 import AlumniModal from './AlumniModal'; // Import your AlumniModal component
 import AlumniCard from '../UI/alumni/AlumniCard';
+import Link from 'next/link';
 
 const   AlumniList = () => {
   const [alumniData, setAlumniData] = useState([]);
@@ -15,7 +16,7 @@ const   AlumniList = () => {
       designation,
       "imageUrl": image.asset->url,
       yearOfPassout,
-      bio
+      linkedin
     }`;
 
     client
@@ -28,30 +29,20 @@ const   AlumniList = () => {
         console.error('Error fetching alumni data:', error);
       });
   }, []);
-
-  const openModal = (alumni) => {
-    setSelectedAlumni(alumni);
-  };
-
-  const closeModal = () => {
-    setSelectedAlumni(null);
-  };
-
   return (
     <div className='p-4'>
-      <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
+      <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center overflow-y-hidden font-sans uppercase mb-6">
         FEATURED ALUMNI
       </h1>
-      {alumniData.map((alumni,index) => (
-        <div className='w-max' key={index} onClick={() => openModal(alumni)}>
-          <AlumniCard key={index} title={alumni.name} img={alumni.imageUrl} company={alumni.company} designation={alumni.designation} />
-        </div>
-      ))}
-
-      {/* Conditional rendering of AlumniModal */}
-      {selectedAlumni && (
-        <AlumniModal alumni={selectedAlumni} onClose={closeModal} />
-      )}
+      <div className='flex flex-wrap justify-center gap-5 mb-[19px]'>
+        {alumniData.map((alumni,index) => (
+          <div className='w-max' key={index}>
+            <Link href={alumni.linkedin} target='_blank'>
+              <AlumniCard key={index} title={alumni.name} img={alumni.imageUrl} company={alumni.company} designation={alumni.designation} />
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

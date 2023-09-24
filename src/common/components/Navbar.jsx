@@ -8,16 +8,15 @@ const Navbar = () => {
     const navbar = document.getElementById("navbar-search");
     navbar.classList.toggle("hidden");
   };
-
   return (
-    <nav class="bg-transparent z-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
-      <nav class=" w-full border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <nav className="bg-transparent z-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
+      <nav className=" w-full border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
           <div className="flex">
-            <Link href="/" class="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src={Logo}
-                class="w-15 sm:h-9 lg:mr-2 "
+                className="w-15 sm:h-9 lg:mr-2 "
                 alt="Flowbite Logo"
               />
               <h1 className="hidden md:block  text-blue-800 font-bold text-xs md:text-2xl lg:mr-7 ">
@@ -27,16 +26,16 @@ const Navbar = () => {
                 SAIT{" "}
               </h1>
             </Link>
-            {/* <div class="relative hidden lg:block">
+            {/* <div className="relative hidden lg:block">
               <input
                 type="text"
                 id="search-navbar"
-                class="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 "
+                className="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 "
                 placeholder="Search..."
               />
-              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                 <svg
-                  class="w-5 h-5 text-gray-500"
+                  className="w-5 h-5 text-gray-500"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -48,21 +47,21 @@ const Navbar = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="sr-only">Search icon</span>
+                <span className="sr-only">Search icon</span>
               </div>
             </div> */}
           </div>
-          <div class="flex md:order-1">
+          <div className="flex md:order-1">
             {/* <button
               type="button"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
               aria-expanded="false"
-              class=" md:hidden text-gray-500 hover:underline  focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+              className=" md:hidden text-gray-500 hover:underline  focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
               onClick={opener}
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -74,20 +73,20 @@ const Navbar = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              <span class="sr-only">Search</span>
+              <span className="sr-only">Search</span>
             </button> */}
 
             <button
               data-collapse-toggle="navbar-search"
               type="button"
-              class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:underline focus:outline-none focus:ring-2 focus:ring-gray-200  dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:underline focus:outline-none focus:ring-2 focus:ring-gray-200  dark:focus:ring-gray-600"
               aria-controls="navbar-search"
               aria-expanded="false"
               onClick={opener}
             >
-              <span class="sr-only">Open menu</span>
+              <span className="sr-only">Open menu</span>
               <svg
-                class="w-6 h-6"
+                className="w-6 h-6"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -102,13 +101,13 @@ const Navbar = () => {
             </button>
           </div>
           <div
-            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-search"
           >
-            <div class="relative mt-3 md:hidden">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <div className="relative mt-3 md:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
-                  class="w-5 h-5 text-gray-500 hidden md:block"
+                  className="w-5 h-5 text-gray-500 hidden md:block"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -124,25 +123,25 @@ const Navbar = () => {
               <input
                 type="text"
                 id="search-navbar"
-                class="hidden md:block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                className="hidden md:block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
                 placeholder="Search..."
               />
             </div>
             <ul
               id="navbar-open"
-              class="text-blue-900 tracking-wide font-bold flex bg-transparent justify-center items-center flex-col p-4 mt-4 border rounded-lg md:flex-row lg:space-x-8 md:space-x-6 md:mt-0 md:text-sm md:font-bold md:border-0  "
+              className="text-blue-900 tracking-wide font-bold flex bg-transparent justify-center items-center flex-col p-4 mt-4 border rounded-lg md:flex-row lg:space-x-8 md:space-x-6 md:mt-0 md:text-sm md:font-bold md:border-0  "
             >
               <li>
-                <div class="relative block md:hidden">
+                <div className="relative block md:hidden">
                   <input
                     type="text"
                     id="search-navbar"
-                    class="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 "
+                    className="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 "
                     placeholder="Search..."
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg
-                      class="w-5 h-5 text-gray-500"
+                      className="w-5 h-5 text-gray-500"
                       aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -154,14 +153,14 @@ const Navbar = () => {
                         clip-rule="evenodd"
                       ></path>
                     </svg>
-                    <span class="sr-only">Search icon</span>
+                    <span className="sr-only">Search icon</span>
                   </div>
                 </div>
               </li>
               <li>
                 <Link
                   href="/"
-                  class="block py-2  rounded hover:underline md:bg-transparent md:p-0"
+                  className="block py-2  rounded hover:underline md:bg-transparent md:p-0"
                   aria-current="page"
                 >
                   Home
@@ -170,7 +169,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="placement/"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Placements
                 </Link>
@@ -178,7 +177,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="events/"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Events
                 </Link>
@@ -186,15 +185,15 @@ const Navbar = () => {
               <li>
                 <button
                   type="button"
-                  class="relative inline-flex items-center bg-blue-800 w-max px-2 h-max rounded-md text-sm font-bold text-center"
+                  className="relative inline-flex items-center bg-blue-800 w-max px-2 h-max rounded-md text-sm font-bold text-center"
                 >
-                  <span class="sr-only">Notifications</span>
-                  <div class="absolute inline-flex items-center justify-center border-2 border-white p-1 w-max h-max text-xs font-bold text-white bg-blue-400 rounded-full -top-5 -right-5">
+                  <span className="sr-only">Notifications</span>
+                  <div className="absolute inline-flex items-center justify-center border-2 border-white p-1 w-max h-max text-xs font-bold text-white bg-blue-400 rounded-full -top-5 -right-5">
                     New
                   </div>
                   <Link
                     href="/hostels"
-                    class="block py-2 rounded hover:underline md:hover:bg-transparent text-white"
+                    className="block py-2 rounded hover:underline md:hover:bg-transparent text-white"
                   >
                     Hostels
                   </Link>
@@ -203,7 +202,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/alumni"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Alumni
                 </Link>
@@ -211,7 +210,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="executives/"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Executives
                 </Link>
@@ -219,7 +218,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/notes"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Notes
                 </Link>
@@ -227,7 +226,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/contact-us"
-                  class="block py-2   rounded hover:underline md:hover:bg-transparent "
+                  className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Contact Us
                 </Link>

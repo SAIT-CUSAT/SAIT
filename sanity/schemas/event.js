@@ -31,9 +31,19 @@ const event = {
     {
       name: "startDate",
       title: "Start Date",
-      type: "datetime",
+      type: "date", // Use "date" type instead of "datetime"
+      options: {
+        dateFormat: "DD-MM-YYYY", // Specify your desired date format
+      },
     },
-    
+    {
+      name: "endDate",
+      title: "End Date",
+      type: "date", // Use "date" type instead of "datetime"
+      options: {
+        dateFormat: "DD-MM-YYYY", // Specify your desired date format
+      },
+    },
     {
       name: 'speakers',
       title: 'Speakers',

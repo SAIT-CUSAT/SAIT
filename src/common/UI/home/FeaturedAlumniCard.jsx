@@ -1,43 +1,26 @@
 import React from "react";
 import Image from "next/image";
-const FeaturedAlumniCard = ({ title, description, img, speakers,key }) => {
+const FeaturedAlumniCard = ({ title, description, img }) => {
   const displayedText =
-    description?.length > 50 ? `${description.slice(0, 70)}...` : description;
+    description?.length > 25 ? `${description.slice(0, 70)}...` : description;
+  const displayedName =
+    title?.length > 15 ? `${title.slice(0, 15)}...` : title;
   return (
-    <div key={key} class="rounded h-full lg:w-64 w-56 border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-center items-center">
-      <div class="flex flex-col justify-center items-center w-full overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200">
-        <figure className="w-full">
+      <div class="flex flex-col justify-center items-center w-[225px] h-[310px] overflow-hidden bg-white rounded-lg shadow-lg text-slate-500">
+        <figure className="w-full h-[225px]">
           <Image
             width={300}
             height={300}
             src={img}
             alt="card image"
-            class="w-full object-contain"
+            class="h-full object-top object-cover"
           />
         </figure>
         <div class="p-3">
-          <header class="mb-4">
-            <h3 class="text-xl font-medium text-slate-700">{title}</h3>
-            {speakers?.length > 0 && (
-              <p class="text-sm text-slate-400">
-                By
-                {speakers?.map((speaker, index) => (
-                  <span key={index} className="">
-                    {" " + speaker.name}
-                    {index === speakers.length - 1
-                      ? "."
-                      : index === speakers.length - 2
-                      ? " and "
-                      : ", "}
-                  </span>
-                ))}
-              </p>
-            )}
-          </header>
-          <p className="w-full text-center">{displayedText}</p>
+            <h3 class="text-xl text-center mb-2 font-medium text-slate-700">{displayedName}</h3>
+          <p className="w-full text-lg text-center">{displayedText}</p>
         </div>
       </div>
-    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ActivityCards from "./Card";
+import Card from "./Card";
 import Link from "next/link";
 
 function Activities({ ActivityPost }) {
@@ -20,21 +20,19 @@ function Activities({ ActivityPost }) {
         </p>
 
         {/* cards */}
-        <div className="flex items-center md:flex-row flex-col md:absolute md:right-4 xl:-bottom-[20rem] lg:-bottom-[24rem] gap-y-3">
+        <div className="flex gap-4 items-center md:flex-row flex-col md:absolute md:right-4 md:-bottom-[18rem] xl:-bottom-[10.1rem] lg:-bottom-[18rem] gap-y-3">
           <Link
             href={"/events"}
-            className="self-center mr-6 font-bold text-blue-900 lg:text-center ml-3"
+            className="self-center mt-10 mr-6 font-bold text-blue-900 lg:text-center ml-3"
           >
-            VIEW ALL ACTIVITIES -&gt;
+            VIEW ALL ACTIVITIES
           </Link>
 
           {ActivityPost.map((activity, index) => (
-            <ActivityCards
+            <Card
               key={index}
               title={activity.title}
-              description={activity.description}
               img={activity.imageUrl1}
-              speakers={activity.speakers}
             />
           ))}
 
@@ -45,5 +43,4 @@ function Activities({ ActivityPost }) {
     </div>
   );
 }
-
 export default Activities;

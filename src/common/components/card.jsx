@@ -2,40 +2,27 @@ import React from "react";
 import Image from "next/image";
 const Cards = (props) => {
   const displayedText =
-    props.para.length > 50 ? `${props.para.slice(0, 70)}...` : props.para;
+    props.text.length > 25 ? `${props.text.slice(0, 25)}...` : props.text;
   return (
-    <div key={props.key} class="rounded bg-white w-80 h-full border-2 overflow-hidden shadow-lg border-blue-900 flex flex-col justify-between items-center">
-      <div className="">
-        <div class="overflow-hidden bg-white rounded text-slate-500 shadow-slate-200">
-          <figure>
-            <Image
-              width={300}
-              height={300}
-              src={props.img}
-              alt="card image"
-              class="aspect-[3/3] w-full"
-            />
-          </figure>
-          <div class="p-6">
-            <header class="mb-4">
-              <h3 class="text-xl font-medium text-slate-700">{props.text}</h3>
-              <p class="text-sm text-slate-400">
-                {props.speakers?.length > 0 && "By"}   
-                {props.speakers?.map((speaker, index) => (
-                  <span key={index} className="">
-                    {" " + speaker.name}
-                    {index === props.speakers.length - 1
-                      ? "."
-                      : index === props.speakers.length - 2
-                      ? " and "
-                      : ", "}
-                  </span>
-                ))}
-              </p>
-            </header>
-            <p>{displayedText}</p>
+    <div className="max-w-sm w-[225px] h-[320px] bg-white rounded-lg shadow-xl">
+      <Image
+        src={props.img}
+        alt="Event Image"
+        className="w-full h-[225px] object-top object-cover rounded-t-lg"
+        height={200}
+        width={200}
+      ></Image>
+      <div
+        className="p-5 h-max text-center"
+      >
+        <h5 className="mb-2 text-lg font-bold tracking-tight uppercase text-gray-900">
+          {displayedText}
+        </h5>
+        {/* <p className="flex justify-center">{props.speakers.map((speaker,index)=>(
+          <div key={index}>
+            {speaker.name}
           </div>
-        </div>
+        ))}</p> */}
       </div>
     </div>
   );

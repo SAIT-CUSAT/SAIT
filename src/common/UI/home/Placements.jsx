@@ -62,7 +62,7 @@ function Placements() {
             href="/placement"
             className="self-center sm:ml-6 font-bold text-[#E7ECEF] md:text-blue-900 lg:text-center lg:pr-3 xl:mt-32"
           >
-            VIEW ALL PLACEMENTS -&gt;
+            VIEW ALL PLACEMENTS
           </Link>
         </div>
       </div>
