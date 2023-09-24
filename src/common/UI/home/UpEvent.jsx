@@ -1,4 +1,4 @@
-import Cards from "../../components/card";
+import Card from "./Card.jsx";
 import Link from "next/link";
 
 const UpcommingEvent = ({ upCommingPost }) => {
@@ -13,10 +13,10 @@ const UpcommingEvent = ({ upCommingPost }) => {
       <div className="pt-6 px-3 flex flex-col items-center md:flex-row flex-wrap gap-2">
         {upCommingPost.length > 0 &&
           upCommingPost?.map((post, index) => (
-            <Cards
+            <Card
               key={index}
               img={post.imageUrl1}
-              text={post.title}
+              title={post.title}
               para={post.description}
               speakers={post.speakers}
             />
@@ -24,7 +24,7 @@ const UpcommingEvent = ({ upCommingPost }) => {
       </div>
       <div className="text-end mr-10">
         <Link href="/events">
-          <p className="uppercase mt-8 text-blue-900 font-sans font-bold cursor-e-resize">
+          <p className="uppercase mt-8 text-blue-900 font-sans font-bold cursor-pointer">
             view all events
           </p>
         </Link>

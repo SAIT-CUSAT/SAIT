@@ -14,13 +14,12 @@ function FeaturedAlumni() {
   const [alumnis, setalumnis] = useState([]);
   useEffect(() => {
     // Fetch alumni data using GROQ query
-    const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..2] {
+    const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..3] {
     name,
     company,
     designation,
     "imageUrl": image.asset->url,
     yearOfPassout,
-    bio
   }`;
 
     client
@@ -46,7 +45,7 @@ function FeaturedAlumni() {
           continue to shape the future of technology and innovation.
         </p>
         {/* cards */}
-        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[14rem] xl:-bottom-[9rem] gap-3">
+        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[20rem] xl:-bottom-[9rem] gap-3">
           {alumnis.map((alumni, index) => (
             <div key={alumni.id}>
               <FeaturedAlumniCard

@@ -1,5 +1,6 @@
 import React from "react";
 import EventCard from "./EventCard.jsx";
+import Card from "../home/Card.jsx";
 import Up1 from "../../../../public/assets/images/events/up1.png";
 import Up2 from "../../../../public/assets/images/events/up2.png";
 import Up3 from "../../../../public/assets/images/events/up3.png";
@@ -23,10 +24,10 @@ const Allevent = ({ data }) => {
             key={event._id}
             onClick={() => dispatch(getData(event))}
           >
-            <EventCard
+            <Card
               key={index}
               img={event.images[0]}
-              text={event.title}
+              title={event.title}
               para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringill"
             />
           </Link>

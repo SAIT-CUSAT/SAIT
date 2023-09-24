@@ -1,8 +1,8 @@
 import React from "react";
-import EventCard from "./EventCard.jsx";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { getData } from "../../../features/counter/counterSlice.js";
+import Card from "../home/Card.jsx";
 // import Bg from "../../../../public/bg-image.png";
 // import Up1 from "../../../../public/assets/images/events/up1.png";
 // import Up2 from "../../../../public/assets/images/events/up2.png";
@@ -25,10 +25,10 @@ const Upevent = ({ data }) => {
             key={event._id}
             onClick={() => dispatch(getData(event))}
           >
-            <EventCard
+            <Card
               key={index}
               img={event.images[0]}
-              text={event.title}
+              title={event.title}
               para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringill"
             />
           </Link>

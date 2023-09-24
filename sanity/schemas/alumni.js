@@ -29,9 +29,9 @@ const alumni = {
       type: "number",
     },
     {
-      name: "bio",
-      title: "Bio",
-      type: "text",
+      name: "linkedin",
+      title: "Likedin Profile Url",
+      type: "url",
     },
   ],
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import ActivityCards from "./Card";
+import Card from "./Card";
 import Link from "next/link";
 
 function Activities({ ActivityPost }) {
@@ -29,12 +29,10 @@ function Activities({ ActivityPost }) {
           </Link>
 
           {ActivityPost.map((activity, index) => (
-            <ActivityCards
+            <Card
               key={index}
               title={activity.title}
-              description={activity.description}
               img={activity.imageUrl1}
-              speakers={activity.speakers}
             />
           ))}
 
