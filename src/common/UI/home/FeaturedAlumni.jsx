@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import FeaturedAlumniCard from "./FeaturedAlumniCard";
 import Link from "next/link";
 import { client } from "../../../../sanity/lib/client";
@@ -10,17 +10,19 @@ const openModal = (alumni) => {
 const closeModal = () => {
   setSelectedAlumni(null);
 };
+
 function FeaturedAlumni() {
   const [alumnis, setalumnis] = useState([]);
+
   useEffect(() => {
     // Fetch alumni data using GROQ query
     const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..3] {
-    name,
-    company,
-    designation,
-    "imageUrl": image.asset->url,
-    yearOfPassout,
-  }`;
+      name,
+      company,
+      designation,
+      "imageUrl": image.asset->url,
+      yearOfPassout,
+    }`;
 
     client
       .fetch(query)
@@ -32,8 +34,9 @@ function FeaturedAlumni() {
         console.error("Error fetching alumni data:", error);
       });
   }, []);
+
   return (
-    <div className="lg:h-[35rem] md:h-[45rem]">
+    <div className="md:h-auto">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
           FEATURED ALUMNI
@@ -45,9 +48,9 @@ function FeaturedAlumni() {
           continue to shape the future of technology and innovation.
         </p>
         {/* cards */}
-        <div className="flex lg:flex-row-reverse justify-center items-center md:mt-16 md:flex-row flex-col flex-wrap lg:absolute lg:right-3 lg:-bottom-[20rem] xl:-bottom-[9rem] gap-3">
+        <div className="flex flex-col md:flex-row flex-wrap md:justify-center items-center gap-3">
           {alumnis.map((alumni, index) => (
-            <div key={alumni.id}>
+            <div key={alumni.id} className="md:w-1/4">
               <FeaturedAlumniCard
                 title={alumni.name}
                 description={alumni.company}
@@ -55,13 +58,13 @@ function FeaturedAlumni() {
               />
             </div>
           ))}
-          <Link
-            href="/alumni"
-            className="self-center sm:mr-[30px]   sm:ml-5 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-32 mt-12 "
-          >
-            VIEW ALL -&gt;
-          </Link>
         </div>
+        <Link
+          href="/alumni"
+          className="self-center sm:mt-5 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 mt-8 text-center"
+        >
+          VIEW ALL -&gt;
+        </Link>
       </div>
     </div>
   );
