@@ -11,9 +11,9 @@ const PlacementCard = ({ title, description, img, speakers,key }) => {
           height={300}
           src={img}
           alt="card image"
-          className="h-[225px] object-top object-cover"
+          className="h-[225px] object-top object-contain"
         />
-        <div class="p-3 text-center">
+       <div class="p-3 text-center w-[298px] h-[180px]">
           <h3 class="text-xl font-medium text-slate-700">{title}</h3>
         </div>
       </div>

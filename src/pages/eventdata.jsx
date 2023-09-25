@@ -27,6 +27,11 @@ const EventsData = () => {
             ))}</p>
           </div>
           <br />
+
+          {/* all images */}
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">
+            More Images
+          </h2>
           <div className="flex flex-wrap gap-10">
             {eventImages?.map((image, index) => (
               <div key={index}>

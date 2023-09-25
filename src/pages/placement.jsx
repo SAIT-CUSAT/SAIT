@@ -28,11 +28,11 @@ const PlacementPage = () => {
       });
   }, []);
   return (
-    <div className="container mx-auto flex-col justify-between ">
+    <div className="flex-col justify-between ">
       {/* <Hero /> */}
 
-      <div className="container sm:flex-col">
-        <div className=" mx-auto text-center my-14">
+      <div className="sm:flex-col">
+        <div className="text-center my-14">
           <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
             Our Recruiters
           </h1>
@@ -47,6 +47,8 @@ const PlacementPage = () => {
             students in top-notch companies within the IT industry. Our strong
             ties with renowned recruiters mean that our graduates have the
             opportunity to kickstart their careers with the best in the
+            business. It&apos;s like a backstage pass to the world of
+            Information Technology where they can shine and make their mark.
             business. It&apos;s like a backstage pass to the world of
             Information Technology where they can shine and make their mark.
           </p>
@@ -97,7 +99,7 @@ const PlacementPage = () => {
         <button className="px-9 mt-10 mb-14 py-1.5 border-2 rounded-md border-stone-200 font-bold text-stone-200">
           EXPLORE
         </button>
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl text-center">
           <p>
             The Department of Information Technology at Cochin University of
             Science and Technology, established in 1995, is a trailblazer in the
