@@ -2,19 +2,11 @@ import {React,useState,useEffect} from "react";
 import FeaturedAlumniCard from "./FeaturedAlumniCard";
 import Link from "next/link";
 import { client } from "../../../../sanity/lib/client";
-
-const openModal = (alumni) => {
-  setSelectedAlumni(alumni);
-};
-
-const closeModal = () => {
-  setSelectedAlumni(null);
-};
 function FeaturedAlumni() {
   const [alumnis, setalumnis] = useState([]);
   useEffect(() => {
     // Fetch alumni data using GROQ query
-    const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..3] {
+    const query = `*[_type == "alumni"] | order(_createdAt desc)  [0..2] {
     name,
     company,
     designation,
@@ -57,7 +49,7 @@ function FeaturedAlumni() {
           ))}
           <Link
             href="/alumni"
-            className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-32 mt-12"
+            className="self-center sm:mr-[25px] sm:ml-6 font-bold text-[#E7ECEF] lg:text-blue-900 lg:text-center lg:pr-3 xl:mt-28 mt-12"
           >
             VIEW ALL
           </Link>

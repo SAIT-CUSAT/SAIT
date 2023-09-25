@@ -23,7 +23,7 @@ function Activities({ ActivityPost }) {
         <div className="flex gap-4 items-center md:flex-row flex-col md:absolute md:right-4 md:-bottom-[18rem] xl:-bottom-[10.1rem] lg:-bottom-[18rem] gap-y-3">
           <Link
             href={"/events"}
-            className="self-center mt-10 mr-6 font-bold text-blue-900 lg:text-center ml-3"
+            className="self-center mt-10 xl:pt-3 mr-6 font-bold text-blue-900 lg:text-center ml-3"
           >
             VIEW ALL ACTIVITIES
           </Link>
