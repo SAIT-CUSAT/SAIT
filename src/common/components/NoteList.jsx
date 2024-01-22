@@ -90,7 +90,7 @@ function NoteList() {
   const noResultsFound = searchButtonClicked && searchResults.length === 0;
   return (
     <div className="p-4">
-      <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
+      <h1 className="text-black md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
         STUDY RESOURCES
       </h1>
 
@@ -157,7 +157,7 @@ function NoteList() {
           Search for Notes...
         </div>
       ) : (
-        <ul className="w-full min-h-[20rem] text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+        <ul className="w-full mt-10 md:min-h-[20rem] text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
           {isLoading ? (
             <p className="w-full text-xl font-bold h-full flex justify-center items-center text-center md:col-span-3 sm:col-span-2 text-gray-600">
               Loading...
@@ -172,8 +172,8 @@ function NoteList() {
             </p>
           ) : (
             searchResults.map((note) => (
-              <Link key={note.topic} href={note.link}>
-                <div className="border-2 border-blue-900 rounded-xl bg-gray-400 p-4 flex items-center gap-3 h-max">
+              <Link className="h-max" key={note.topic} href={note.link}>
+                <div className="border-2 border-blue-900 rounded-xl bg-black p-4 flex items-center gap-3 h-max">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

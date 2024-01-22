@@ -20,12 +20,12 @@ const Landing = () => {
           />
         </div>
         {/* heading named Upcomming Events and Other Stuffs */}
-        <div className="md:hidden md:w-1/2 w-full flex flex-col justify-center items-center">
+        <div className="text-black md:hidden md:w-1/2 w-full flex flex-col justify-center items-center">
           <h1 className="text-4xl font-bold text-center">
             Events
           </h1>
         </div>
-        <div className="md:w-1/2 m-10 flex flex-col justify-center items-center">
+        <div className="md:w-1/2 m-10 flex flex-col justify-center items-center text-black">
           <p className="">
             Experience the vibrancy of our Information Technology department
             through a diverse range of events, meticulously organized by the

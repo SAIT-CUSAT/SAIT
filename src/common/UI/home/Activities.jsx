@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import Link from "next/link";
+import { Main_card } from "../../components/Main_card";
 
 function Activities({ ActivityPost }) {
   console.log(ActivityPost);
@@ -20,7 +21,7 @@ function Activities({ ActivityPost }) {
         </p>
 
         {/* cards */}
-        <div className="flex gap-4 items-center md:flex-row flex-col md:absolute md:right-4 md:-bottom-[18rem] xl:-bottom-[10.1rem] lg:-bottom-[18rem] gap-y-3">
+        <div className="flex gap-4 items-center md:flex-row flex-col md:absolute md:right-4 md:-bottom-[22rem] xl:-bottom-[15.1rem] lg:-bottom-[18rem] gap-y-3">
           <Link
             href={"/events"}
             className="self-center mt-10 mr-6 font-bold text-blue-900 lg:text-center ml-3"
@@ -29,7 +30,7 @@ function Activities({ ActivityPost }) {
           </Link>
 
           {ActivityPost.map((activity, index) => (
-            <Card
+            <Main_card
               key={index}
               title={activity.title}
               img={activity.imageUrl1}

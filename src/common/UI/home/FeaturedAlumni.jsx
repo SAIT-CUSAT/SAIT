@@ -41,16 +41,16 @@ function FeaturedAlumni() {
         <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
           FEATURED ALUMNI
         </h1>
-        <p className="xl:w-[30rem] w-full mb-6">
+        <p className="w-full mb-6 text-center">
           Meet our illustrious alumni who have made their mark in the world of
           Information Technology. From influential tech entrepreneurs to top
           executives at global IT corporations, our department&apos;s renowned alumni
           continue to shape the future of technology and innovation.
         </p>
         {/* cards */}
-        <div className="flex flex-col md:flex-row flex-wrap md:justify-center items-center gap-3">
+        <div className="flex flex-col md:flex-row flex-wrap md:justify-center items-center gap-12">
           {alumnis.map((alumni, index) => (
-            <div key={alumni.id} className="md:w-1/4">
+            <div key={alumni.id} className="">
               <FeaturedAlumniCard
                 title={alumni.name}
                 description={alumni.company}

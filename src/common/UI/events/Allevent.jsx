@@ -7,13 +7,14 @@ import Up3 from "../../../../public/assets/images/events/up3.png";
 import { useDispatch } from "react-redux";
 import { getData } from "../../../features/counter/counterSlice.js";
 import Link from "next/link.js";
+import { Main_card } from "../../components/Main_card.jsx";
 
 const Allevent = ({ data }) => {
   const dispatch = useDispatch();
   return (
     <div className="container h-full flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-14">
-        <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
+        <h1 className="text-black md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
           Past events
         </h1>
       </div>
@@ -24,7 +25,7 @@ const Allevent = ({ data }) => {
             key={event._id}
             onClick={() => dispatch(getData(event))}
           >
-            <Card
+            <Main_card
               key={index}
               img={event.images[0]}
               title={event.title}

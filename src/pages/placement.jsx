@@ -33,14 +33,14 @@ const PlacementPage = () => {
 
       <div className="sm:flex-col">
         <div className="text-center my-14">
-          <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
+          <h1 className="text-black md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
             Our Recruiters
           </h1>
         </div>
         <div className="flex my-10 mx-10 flex-wrap justify-center items-center">
           <Carousel placements={placements} />
         </div>
-        <div className="mx-10 text-center my-14 text-blue-500">
+        <div className="mx-10 text-center my-14 text-blue-900">
           <p>
             Our Department of Information Technology as a launchpad for
             exceptional careers. We have a track record of placing our talented

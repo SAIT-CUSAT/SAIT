@@ -1,13 +1,15 @@
 import React from "react";
-import Image from "next/image";
-const PlacementCard = ({ title, description, img, speakers, key }) => {
-  const displayedText =
-    description?.length > 50 ? `${description.slice(0, 70)}...` : description;
+
+export const Main_card = ({title,description,img,speakers,key}) => {
   return (
     <div>
-      <div className="card lg:w-60 w-52 bg-base-100 shadow-xl">
-        <figure>
-          <img src={img} alt="Shoes" className="h-[15rem] w-full " />
+      <div className="card md:w-60 lg:w-72 xl:w-80 bg-base-100 shadow-xl h-[24rem] xl:h-[29rem]">
+        <figure className="w-full">
+          <img
+            src={img}
+            alt="Shoes"
+            className="h-[18rem] xl:h-[20rem] w-full"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-white">{title}</h2>
@@ -20,5 +22,3 @@ const PlacementCard = ({ title, description, img, speakers, key }) => {
     </div>
   );
 };
-
-export default PlacementCard;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { client } from "../../../../sanity/lib/client";
 import PlacementCard from "./PlacementCard";
 import Link from "next/link";
+import { Main_card } from "../../components/Main_card";
 
 function Placements() {
   const [placements, setPlacements] = useState([]);
@@ -33,7 +34,7 @@ function Placements() {
   }, []);
 
   return (
-    <div className="md:h-[45rem]">
+    <div className="md:h-[60rem]">
       <div className="bg-blue-900 py-20 px-8 text-white relative">
         <div className="flex flex-col md:items-end">
           <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
@@ -48,7 +49,7 @@ function Placements() {
           </p>
         </div>
         {/* cards */}
-        <div className="flex gap-5 flex-wrap mt-5 items-center md:flex-row flex-col md:absolute xl:-bottom-[1rem] lg:-bottom-[9rem]  md:left-[6rem] mb-[-130px]">
+        <div className="flex gap-5 flex-wrap mt-5 items-center md:flex-row flex-col md:absolute xl:-bottom-[1rem] lg:-bottom-[12rem] md:-bottom-[20rem] mb-[-130px]">
           {placements.map((placement, index) => (
             <div key={index}>
               <PlacementCard

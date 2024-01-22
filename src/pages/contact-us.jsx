@@ -29,7 +29,7 @@ const contactus = () => {
                     type="email"
                     id="email"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="name@flowbite.com"
+                    placeholder="sample@gmail.com"
                     required
                   />
                 </div>
@@ -91,7 +91,7 @@ const contactus = () => {
               </div>
               <div class="mt-3 grow text-center">
                 <p class="mb-2 font-bold text-black">Phone</p>
-                <p class="text-neutral-500">+1 234-567-89</p>
+                <p class="text-neutral-500">+91 234-567-89</p>
               </div>
             </div>
             <div class="flex flex-col items-center">

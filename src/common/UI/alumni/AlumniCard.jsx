@@ -4,28 +4,19 @@ const AlumniCard = ({ title, img, company, designation, key }) => {
   const displayedText =
     title.length > 15 ? `${title.slice(0, 15)}...` : title;
   return (
-    <div className="max-w-sm w-[235px] h-[350px] transform transition-transform hover:scale-110 duration-500 bg-white rounded-lg shadow-xl">
-      <Image
-        src={img}
-        alt="Event Image"
-        className="w-full h-[235px] object-top object-cover rounded-t-lg"
-        height={200}
-        width={200}
-      ></Image>
-      <div
-        className="p-5 h-max text-center"
-      >
-        <h5 className="mb-2 text-lg font-bold tracking-tight uppercase text-gray-900">
-          {displayedText}
-        </h5>
-        <h5 className="mb-2 text-md font-medium tracking-tight text-slate-600">
-          {designation} at {company}
-        </h5>
-        {/* <p className="flex justify-center">{props.speakers.map((speaker,index)=>(
-          <div key={index}>
-            {speaker.name}
-          </div>
-        ))}</p> */}
+    <div className="transform transition-transform hover:scale-110 duration-500 rounded-lg shadow-xl">
+      <div className="card w-72 bg-base-100 shadow-xl h-[25rem]">
+        <figure>
+          <img src={img} alt="Shoes" className="h-[15rem] w-full " />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title text-white">{title}</h2>
+          <p>{designation}</p>
+          <p>{company}</p>
+          {/* <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
+          </div> */}
+        </div>
       </div>
     </div>
   );

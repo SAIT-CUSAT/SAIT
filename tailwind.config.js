@@ -4,7 +4,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
+
     extend: {
       dropShadow: {
         '3xl': '0px 0px 20px  rgba(255,255,255,0.1)',
@@ -21,11 +21,14 @@ module.exports = {
         'p_dullgrey': '#A3ABB3',
         'white': '#FFFFFF',
         'p_bggrey': '#525252',
-        
+
       },
       skew: {
         '17': '17deg',
-      }
+      },
+      colors: {
+        'blue-900': '#000',
+      },
     },
     screens: {
 
@@ -48,5 +51,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     }
   },
-  
+  // add plugins
+  plugins: [require("daisyui")],
+
 };

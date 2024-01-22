@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { getData } from "../../../features/counter/counterSlice.js";
 import Card from "../home/Card.jsx";
+import { Main_card } from "../../components/Main_card.jsx";
 // import Bg from "../../../../public/bg-image.png";
 // import Up1 from "../../../../public/assets/images/events/up1.png";
 // import Up2 from "../../../../public/assets/images/events/up2.png";
@@ -14,7 +15,7 @@ const Upevent = ({ data }) => {
   return (
     <div className="container h-full flex flex-col mx-auto my-14">
       <div className=" mx-auto text-center my-14">
-        <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10">
+        <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase mb-10 text-black">
           UPCOMING EVENTS
         </h1>
       </div>
@@ -25,7 +26,7 @@ const Upevent = ({ data }) => {
             key={event._id}
             onClick={() => dispatch(getData(event))}
           >
-            <Card
+            <Main_card
               key={index}
               img={event.images[0]}
               title={event.title}

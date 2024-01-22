@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer class="bg-blue-900 text-center text-stone-200">
       <div class="pt-9">
-        <div class="mb-9 flex gap-16 flex-wrap justify-center">
+        <div class="mb-9 px-10 flex gap-16 flex-wrap justify-center">
           <a href="#!" class="text-neutral-800 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
