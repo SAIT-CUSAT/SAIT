@@ -31,10 +31,10 @@ const   AlumniList = () => {
   }, []);
   return (
     <div className='p-4'>
-      <h1 className="md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center overflow-y-hidden font-sans uppercase mb-6">
+      <h1 className="text-black md:text-3xl text-2xl font-bold md:tracking-[1.5em] text-center overflow-y-hidden font-sans uppercase mb-6">
         FEATURED ALUMNI
       </h1>
-      <div className='flex flex-wrap justify-center gap-5 mb-[19px]'>
+      <div className='flex flex-wrap justify-center gap-5 my-20'>
         {alumniData.map((alumni,index) => (
           <div className='w-max' key={index}>
             <Link href={alumni.linkedin} target='_blank'>

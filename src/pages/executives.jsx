@@ -31,7 +31,7 @@ const ExecutivesPage = () => {
   );
   return (
     <div className="p-4 flex flex-col gap-4">
-      <h1 className="md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
+      <h1 className="text-black md:text-3xl md:my-0 my-5 text-2xl font-bold md:tracking-[1.5em] text-center font-sans uppercase md:mb-10">
         EXECUTIVE BOARD 2023-24
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-5">

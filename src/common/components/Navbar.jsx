@@ -1,9 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../../../public/logo.png";
+import Logo from "../../../public/assets/images/header/small_header_logo.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
   const opener = () => {
     const navbar = document.getElementById("navbar-search");
     navbar.classList.toggle("hidden");
@@ -19,10 +21,10 @@ const Navbar = () => {
                 className="w-15 sm:h-9 lg:mr-2 "
                 alt="Flowbite Logo"
               />
-              <h1 className="hidden md:block  text-blue-800 font-bold text-xs md:text-2xl lg:mr-7 ">
+              <h1 className="hidden md:block  text-blue-900 font-bold text-xs md:text-2xl lg:mr-7 ">
                 SAIT CUSAT{" "}
               </h1>
-              <h1 className="block md:hidden text-blue-800 font-bold text-3xl ml-1 md:text-xs lg:text-sm md:mx-3 ">
+              <h1 className="block md:hidden text-blue-900 font-bold text-3xl ml-1 md:text-xs lg:text-sm md:mx-3 ">
                 SAIT{" "}
               </h1>
             </Link>
@@ -158,78 +160,102 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link
-                  href="/"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/", undefined, { scroll: true });
+                  }}
                   className="block py-2  rounded hover:underline md:bg-transparent md:p-0"
                   aria-current="page"
                 >
                   Home
-                </Link>
+                </div>
               </li>
               <li>
-                <Link
-                  href="placement/"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/placement", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Placements
-                </Link>
+                </div>
               </li>
               <li>
-                <Link
-                  href="events/"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/events", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Events
-                </Link>
+                </div>
               </li>
               <li>
                 <button
                   type="button"
-                  className="relative inline-flex items-center bg-blue-800 w-max px-2 h-max rounded-md text-sm font-bold text-center"
+                  className="relative inline-flex items-center bg-blue-900 w-max px-2 h-max rounded-md text-sm font-bold text-center"
                 >
                   <span className="sr-only">Notifications</span>
-                  <div className="absolute inline-flex items-center justify-center border-2 border-white p-1 w-max h-max text-xs font-bold text-white bg-blue-400 rounded-full -top-5 -right-5">
+                  <div className="absolute inline-flex items-center justify-center border-2 border-white p-1 w-max h-max text-xs font-bold text-white bg-blue-900 rounded-full -top-5 -right-5">
                     New
                   </div>
-                  <Link
-                    href="/hostels"
+                  <div
+                  onClick={() => {
+                    opener();
+                    router.push("/hostels", undefined, { scroll: true });
+                  }}
                     className="block py-2 rounded hover:underline md:hover:bg-transparent text-white"
                   >
                     Hostels
-                  </Link>
+                  </div>
                 </button>
               </li>
               <li>
-                <Link
-                  href="/alumni"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/alumni", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Alumni
-                </Link>
+                </div>
               </li>
               <li>
-                <Link
-                  href="executives/"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/executives", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Executives
-                </Link>
+                </div>
               </li>
               <li>
-                <Link
-                  href="/notes"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/notes", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Notes
-                </Link>
+                </div>
               </li>
               <li>
-                <Link
-                  href="/contact-us"
+                <div
+                  onClick={() => {
+                    opener();
+                    router.push("/contact-us", undefined, { scroll: true });
+                  }}
                   className="block py-2   rounded hover:underline md:hover:bg-transparent "
                 >
                   Contact Us
-                </Link>
+                </div>
               </li>
             </ul>
           </div>
