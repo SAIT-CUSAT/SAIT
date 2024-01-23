@@ -54,11 +54,11 @@ const PlacementPage = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-8">
+      <div className="flex flex-wrap flex-col justify-around container gap-5 mx-auto my-14 p-0 md:p-8">
         {placements.map((company) => (
           <div
             key={company._id}
-            className="flex justify-between items-center  rounded-md p-10 bg-blue-900"
+            className="flex flex-col md:flex-row justify-between items-center  rounded-md p-10 bg-blue-900"
           >
             <div className="flex flex-wrap gap-3 justify-between max-[677px]:flex-col ">
               <div className="w-32">
@@ -80,14 +80,14 @@ const PlacementPage = () => {
               </div>
             </div>
             <div className="flex max-[677px]:flex-col">
-              <button class="bg-transparent text-stone-200 font-bold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14  border border-stone-200 hover:border-transparent rounded">
+              <button class="my-6 sm:my-0 bg-transparent text-stone-200 font-bold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 lg:px-14 px-3  border border-stone-200 hover:border-transparent rounded">
                 {company.numberOfAlumni} of our Alumnis are currently working
                 here
               </button>
               <Link
                 target="_blank"
                 href={company.website}
-                class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded"
+                class="bg-transparent text-stone-200 font-semibold hover:bg-stone-200 hover:text-blue-900 py-1 mx-2 px-14 border border-stone-200 hover:border-transparent rounded flex justify-center items-center "
               >
                 know more
               </Link>
