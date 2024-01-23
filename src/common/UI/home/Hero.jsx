@@ -12,17 +12,17 @@ import HeroLogo2 from "../../../../public/assets/images/hero/main_logo_inner.svg
 const Hero = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col lg:flex-row justify-center w-screen gap-12">
-      <div className="flex w-full justify-center self-start">
+    <div className="flex flex-col lg:flex-row justify-center w-screen gap-5">
+      <div className="flex lg:w-3/5 w-full justify-center xl:self-start">
         <Image
           className="w-full xl:w-[50rem] lg:w-[35rem] md:w-[40rem]"
           src={HeroMob}
           alt=""
         />
       </div>
-      <div className="px-4 sm:px-12 lg:px-0 text-[14px] md:text-xs lg:text-sm xl:text-[1rem] lg:w-2/3 w-full text-black md:flex flex-col justify-center sm:gap-12">
+      <div className="px-4 sm:px-12 lg:px-0 text-[14px] md:text-xs lg:text-sm xl:text-[1rem] lg:w-96 w-full text-black md:flex flex-col justify-center sm:gap-12">
         {/* contents in hero page */}
-        <div className="flex flex-col bg-white rounded-[10%] py-16">
+        <div className="flex flex-col bg-white rounded-[10%] py-12">
           <p className="w-full leading-5 px-12">
             {/* The Department of Information Technology at Cochin University of
             Science and Technology, founded in 1995, is a dynamic hub of
@@ -58,9 +58,9 @@ const Hero = () => {
           </button>
         </div>
         {/* end of contents */}
-        <div className="bg-black p-12 rounded-[10%] flex justify-center relative sm:mt-0 mt-12">
+        <div className="bg-black group p-12 rounded-[10%] flex justify-center relative sm:mt-0 mt-12">
           <Image className="w-3/6" src={HeroLogo2} alt="" />
-          <Image className="animate-spin absolute bottom-5 left-[25%] z-20 w-3/6" src={HeroLogo1} alt="" />
+          <Image className="animate-spin group-hover:animate-none absolute bottom-5 left-[25%] z-20 w-3/6" src={HeroLogo1} alt="" />
         </div>
       </div>
     </div>
